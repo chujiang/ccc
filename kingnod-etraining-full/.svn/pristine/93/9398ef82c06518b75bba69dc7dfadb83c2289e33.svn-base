@@ -1,0 +1,167 @@
+package com.kingnod.etraining.common.dao;
+
+import java.io.Serializable;
+import java.util.Map;
+
+import org.apache.ibatis.executor.Executor;
+import org.apache.ibatis.mapping.MappedStatement;
+import org.apache.ibatis.mapping.SqlCommandType;
+import org.apache.ibatis.plugin.Intercepts;
+import org.apache.ibatis.plugin.Invocation;
+import org.apache.ibatis.plugin.Signature;
+
+import com.kingnod.core.criteria.Cnd;
+import com.kingnod.core.criteria.CriteriaBuilder;
+import com.kingnod.core.exception.Exceptions;
+import com.kingnod.core.extensions.mybatis.interceptor.AbstractInterceptor;
+import com.kingnod.core.util.SpringUtils;
+import com.kingnod.etraining.activity.dao.ActivityFolderDAO;
+import com.kingnod.etraining.activity.entity.ActivityFolder;
+import com.kingnod.etraining.organization.dao.OrganizationDAO;
+import com.kingnod.etraining.organization.dao.SiteDAO;
+import com.kingnod.etraining.organization.entity.Organization;
+import com.kingnod.etraining.organization.entity.Site;
+import com.kingnod.etraining.resource.dao.ResourceFolderDAO;
+import com.kingnod.etraining.resource.entity.ResourceFolder;
+
+@Intercepts({ @Signature(type = Executor.class, method = "update", args = { MappedStatement.class, Object.class }) })
+public class TreeDeleteHandlerInterceptor extends AbstractInterceptor {
+	protected ActivityFolderDAO activityFolderDAO;
+	protected OrganizationDAO organizationDAO;
+	protected ResourceFolderDAO resourceFolderDAO;
+	protected SiteDAO siteDAO;
+
+	static int MAPPED_STATEMENT_INDEX = 0;
+	static int PARAMETER_INDEX = 1;
+
+	public Object intercept(Invocation invocation) throws Throwable {
+		Object[] queryArgs = invocation.getArgs();
+		MappedStatement ms = (MappedStatement) queryArgs[MAPPED_STATEMENT_INDEX];
+		Object entity = queryArgs[PARAMETER_INDEX];
+		if(!ms.getId().endsWith("updateByCriteria")){
+			return invocation.proceed();
+		}
+		if(!(entity instanceof Map) || null == ((Map)entity).get("params")){
+			return invocation.proceed();
+		}
+		Map params = (Map)((Map)entity).get("params");
+		if(!(Boolean)params.get("softDeleteEnable")){
+			return invocation.proceed();
+		}
+		Serializable[] ids = (Serializable[])params.get("ids");
+		//活动
+		if (ms.getId().startsWith("ActivityFolder.")) {
+			handleActivityFolder(ms, ids);
+		}
+		//组织
+		if (ms.getId().startsWith("Organization.")) {
+			 handleOrganization(ms, ids);
+		}
+		//资源
+		if (ms.getId().startsWith("ResourceFolder.")) {
+			 handleResourceFolder(ms, ids);
+		}
+		//站点
+		if (ms.getId().startsWith("Site.")) {
+			handleSite(ms, ids);
+		}
+		return invocation.proceed();
+	}
+
+	/**
+	 * 站点删除操作拦截
+	 * 
+	 * @param ms
+	 * @param entity
+	 */
+	private void handleSite(MappedStatement ms, Serializable[] ids) {
+		for(Serializable id:ids){
+			int count = 0;
+			// 站点
+			CriteriaBuilder cb = Cnd.builder(Site.class);
+			cb.andEQ("parentId", id);
+			int siteCount = siteDAO.countByCriteria(cb.buildCriteria());
+			// 活动
+			cb = Cnd.builder(ActivityFolder.class);
+			cb.andEQ("siteId", id);
+			int actCount = activityFolderDAO.countByCriteria(cb.buildCriteria());
+			// 资源
+			cb = Cnd.builder(ResourceFolder.class);
+			cb.andEQ("siteId", id);
+			int resCount = resourceFolderDAO.countByCriteria(cb.buildCriteria());
+			// 组织
+			cb = Cnd.builder(Organization.class);
+			cb.andEQ("siteId", id);
+			int orgCount = organizationDAO.countByCriteria(cb.buildCriteria());
+			count = siteCount + actCount + resCount + orgCount;
+			if (count > 0) {
+				throw Exceptions.createAppException("cmn002002");
+			}
+		//}
+		}
+	}
+
+	/**
+	 * 活动删除操作拦截
+	 * @param ms
+	 * @param entity
+	 */
+	private void handleActivityFolder(MappedStatement ms, Serializable[] ids) {
+		for(Serializable id:ids){
+			int count = 0;
+			CriteriaBuilder cb = Cnd.builder(ActivityFolder.class);
+			cb.andEQ("parentId", id);
+			int actCount = activityFolderDAO.countByCriteria(cb.buildCriteria());
+			count = actCount + count;
+			if (count > 0) {
+				throw Exceptions.createAppException("aty003001");
+			}
+		}
+	}
+
+	/**
+	 * 资源删除操作拦截
+	 * @param ms
+	 * @param entity
+	 */
+	private void handleResourceFolder(MappedStatement ms, Serializable[] ids) {
+		for(Serializable id:ids){
+			int count = 0;
+			CriteriaBuilder cb = Cnd.builder(ResourceFolder.class);
+			cb.andEQ("parentId", id);
+			int resCount = resourceFolderDAO.countByCriteria(cb.buildCriteria());
+			count = resCount + count;
+			if (count > 0) {
+				throw Exceptions.createAppException("res003003");
+			}
+		}
+	}
+
+	/**
+	 * 组织删除操作拦截
+	 * @param ms
+	 * @param entity
+	 */
+	private void handleOrganization(MappedStatement ms, Serializable[] ids) {
+		for(Serializable id:ids){
+			int count = 0;
+			CriteriaBuilder cb = Cnd.builder(Organization.class);
+			cb.andEQ("parentId", id);
+			int orgCount = organizationDAO.countByCriteria(cb.buildCriteria());
+			count = orgCount + count;
+			if (count > 0) {
+				throw Exceptions.createAppException("org001003");
+			}
+		}
+	}
+
+	@Override
+	protected void afterSetProperties() {
+		super.afterSetProperties();
+		activityFolderDAO = SpringUtils.getBean(ActivityFolderDAO.class);
+		organizationDAO = SpringUtils.getBean(OrganizationDAO.class);
+		resourceFolderDAO = SpringUtils.getBean(ResourceFolderDAO.class);
+		siteDAO = SpringUtils.getBean(SiteDAO.class);
+	}
+
+}

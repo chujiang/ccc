@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="GBK"?>
+
+<dictConfig name="exm">
+
+	
+	<static name="knowledgeFilterItems" >
+		<item key="common.filter_all" value=""/>
+		<item key="exm.knowledge_name" value="name"/>
+		<item key="exm.knowledge_remark" value="remark"/>
+		<item key="common.entity_updateDate" value="updateDate" />
+	</static>
+	
+	<!-- 试题搜索条件 -->
+	<static name="questionFilterItems" >
+		<item key="common.filter_all" value=""/>
+		<item key="exm.question_content" value="content"/>
+		<item key="exm.question_degree" value="degree"/>
+		<item key="exm.question_score" value="score"/>
+		<item key="common.entity_updateDate" value="updateDate"/>
+	</static>
+	
+	<!-- 抽题方式  ，S(static): 静态抽题，D(dynamic): 动态抽题 -->
+	<static name="extractingQuestionWayItems">
+		<!-- <item key="exm.extractingQuestionWay_M" value="M" /> -->
+		<!-- <item key="exm.extractingQuestionWay_S" value="S" /> 静态抽题  暂时屏蔽掉-->
+		<item key="exm.extractingQuestionWay_D" value="D" />
+	</static>
+	
+	<!-- 组卷方式   A: 自动   M: 手动-->
+	<static name="generatorPaperPatternItems">
+		<item key="exm.generatorPaperPattern_M" value="M" />
+		<item key="exm.generatorPaperPattern_A" value="A" />
+	</static>
+	
+	<!-- 试题难度 -->
+	<static name="questionDegreeItems" >
+		<item key="exm.question_degreeOne" value="1"/>
+		<item key="exm.question_degreeTwo" value="2"/>
+		<item key="exm.question_degreeThree" value="3"/>
+		<item key="exm.question_degreeFour" value="4"/>
+		<item key="exm.question_degreeFive" value="5"/>
+	</static>
+	
+	<!-- R：单选题， C：多选题， T：填空题， A：问答题， B: 判断题，Z：组合题，Y：语音题 -->
+	<!-- 试题类型 -->
+	<static name="questionTypeItems" >
+		<item key="exm.question_type_R" value="R"/>
+		<item key="exm.question_type_C" value="C"/>
+		<item key="exm.question_type_B" value="B"/>
+		<item key="exm.question_type_T" value="T"/>
+		<item key="exm.question_type_A" value="A"/>
+		<!-- <item key="exm.question_type_Z" value="Z"/> -->
+	</static>
+	
+	<!-- R：单选题， C：多选题， T：填空题， A：问答题， B: 判断题，Z：组合题，Y：语音题 -->
+	<!-- 试题类型查询条件 -->
+	<static name="questionTypeItemsAll" >
+		<item key="common.filter_all" value=""/>
+		<item key="exm.question_type_R" value="R"/>
+		<item key="exm.question_type_C" value="C"/>
+		<item key="exm.question_type_B" value="B"/>
+		<item key="exm.question_type_T" value="T"/>
+		<item key="exm.question_type_A" value="A"/>
+		<!-- <item key="exm.question_type_Z" value="Z"/> -->
+	</static>
+	
+	<!-- 试题类型  (有 不限题型的选项) -->
+	<static name="unlimitedQuestionTypeItems" >
+		<item key="common.filter_all" value=""/>
+		<item key="exm.question_type_U" value="U"/>
+		<item key="exm.question_type_R" value="R"/>
+		<item key="exm.question_type_C" value="C"/>
+		<item key="exm.question_type_B" value="B"/>
+		<item key="exm.question_type_T" value="T"/>
+		<item key="exm.question_type_A" value="A"/>
+		<!-- <item key="exm.question_type_Z" value="Z"/>-->
+	</static>
+	
+	<!-- 试题类型 -->
+	<static name="questionTypeOtherItems" >
+		<item key="exm.question_type_R" value="R"/>
+		<item key="exm.question_type_C" value="C"/>
+		<item key="exm.question_type_T" value="T"/>
+		<item key="exm.question_type_A" value="A"/>
+		<item key="exm.question_type_B" value="B"/>
+		<!-- 暂时  屏蔽  组合题  与  语音题  update （piJingwei）
+		<item key="exm.question_type_Z" value="Z"/>
+		<item key="exm.question_type_Y" value="Y"/>
+		 -->
+	</static>
+	
+	<!-- 试题答案 -->
+	<static name="type_R">
+		<item key="exm.questionA" value="1" />
+		<item key="exm.questionB" value="2" />
+		<item key="exm.questionC" value="3" />
+		<item key="exm.questionD" value="4" />
+	</static>
+	<static name="type_C">
+		<item key="exm.questionA" value="1" />
+		<item key="exm.questionB" value="2" />
+		<item key="exm.questionC" value="3" />
+		<item key="exm.questionD" value="4" />
+		<item key="exm.questionE" value="5" />
+	</static>
+	<static name="type_T">
+		<item key="exm.TOne" value="T" />
+	</static>
+	<static name="type_A">
+		<item key="exm.TOne" value="T" />
+		<item key="exm.TTwo" value="T" />
+		<item key="exm.TThree" value="T" />
+	</static>
+	<static name="type_B">
+		<item key="exm.questionA" value="1" />
+		<item key="exm.questionB" value="2" />
+	</static>
+	<!-- 试卷出题类型 -->
+	<static name="paperTypeItmes">
+		<item key="paperType_F" value="F" />
+		<item key="paperType_R" value="R" />
+	</static>
+	<!-- 试卷搜索条件 update by maxudong -->
+	<static name="paperFilterItems">
+		<item key="common.filter_all" value=""/>
+		<item key="exm.paper_name" value="name"/>
+		<item key="exm.paper_degree" value="degree"/>
+		<item key="exm.paper_totalScore" value="totalScore"/>
+		<item key="common.entity_updateDate" value="updateDate"/>
+	</static>
+	<!-- 试卷计分方式 -->
+	<static name="scoringTypeItems">
+		<item key="exm.scoringType_H" value="H"/>
+		<item key="exm.scoringType_L" value="L"/>
+		<item key="exm.scoringType_A" value="A"/>
+	</static>
+	<static name="markingCheckItems">
+		<item key="exm.enabledChech_N" value="N"></item>
+		<item key="exm.enabledChech_Y" value="Y"></item>
+	</static>
+	<!-- 阅卷方式 -->
+	<static name="readingTypeItems">
+		<item key="exm.readingType_M" value="M"></item><!-- 人工阅卷 -->
+		<item key="exm.readingType_A" value="A"></item><!-- 自动阅卷 -->
+	</static>
+	<static name="enabledChechItems">
+		<item key="exm.enabledChech_Y" value="Y"></item>
+		<item key="exm.enabledChech_N" value="N"></item>
+	</static>
+	<!-- 答题次序 -->
+	<static name="answerOrderItems">
+		<item key="exm.answerOrder_N" value="N"></item>
+		<item key="exm.answerOrder_R" value="R"></item>
+	</static>
+	<!-- 答题选项显示次序 -->
+	<static name="answerDisplayOrderItems">
+		<item key="exm.answerDisplayOrder_F" value="F"></item>
+		<item key="exm.answerDisplayOrder_R" value="R"></item>
+	</static>
+	<!-- 显示成绩 -->
+	<static name="displayScoreItems">
+		<item key="exm.displayScore_N" value="N"></item>
+		<item key="exm.displayScore_Y" value="Y"></item>
+		<item key="exm.displayScore_A" value="A"></item>
+	</static>
+	<!-- 考试限制 -->
+	<static name="examRestraintItems">
+		<item key="exm.examRestraint_N" value="N"></item>
+		<item key="exm.examRestraint_D" value="D"></item>
+		<item key="exm.examRestraint_W" value="W"></item>
+		<item key="exm.examRestraint_M" value="M"></item>
+	</static>
+	<!-- 试卷状态 update by maxudong  -->
+	<static name="statusItems">
+	    <item key="common.filter_all" value=""/>
+		<item key="exm.status_p" value="P"></item>
+		<!-- <item key="exm.status_C" value="C"></item> -->
+		<item key="exm.status_R" value="R"></item>
+	</static>
+	<!-- 测试区搜索条件 -->
+	<static name="testGroupFilterItems">
+		<item key="exm.testGroup_name" value="name"/>
+		<item key="exm.testGroup_questionType" value="questionType"/>
+		<item key="exm.testGroup_readingType" value="readingType"/>
+		<item key="exm.testGroup_status" value="status"/>
+		<item key="common.entity_updaterId" value="updaterId"/>
+	</static>
+	<!-- 测试区状态 -->
+	<static name="testGroupStatusItems">
+		<item key="exm.testGroupStatus_P" value="P"/>
+		<item key="exm.testGroupStatus_R" value="R"/>
+	</static>
+	<!-- 搜索试题与测试区 -->
+	<static name="questionTestGroupFilterItems">
+		<item key="common.filter_all" value=""/>
+		<item key="exm.questionTestGroup_degree" value="degree"/>
+		<item key="exm.questionTestGroup_score" value="score"/>
+		<item key="exm.questionTestGroup_type" value="type"/>
+	</static>
+</dictConfig>

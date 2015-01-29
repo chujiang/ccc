@@ -1,0 +1,18 @@
+#Fri Feb 03 11:10:38 CST 2012
+eclipse.preferences.version=1
+encoding//src/main/resources/i18n/activity_error_zh_CN.properties=UTF-8
+encoding//src/main/resources/i18n/activity_message_zh_CN.properties=UTF-8
+encoding//src/main/resources/i18n/common_error_zh_CN.properties=UTF-8
+encoding//src/main/resources/i18n/common_message_zh_CN.properties=UTF-8
+encoding//src/main/resources/i18n/course_error_zh_CN.properties=UTF-8
+encoding//src/main/resources/i18n/course_message_zh_CN.properties=UTF-8
+encoding//src/main/resources/i18n/exam_error_zh_CN.properties=UTF-8
+encoding//src/main/resources/i18n/exam_message_zh_CN.properties=UTF-8
+encoding//src/main/resources/i18n/organization_error_zh_CN.properties=UTF-8
+encoding//src/main/resources/i18n/organization_message_zh_CN.properties=UTF-8
+encoding//src/main/resources/i18n/resource_error_zh_CN.properties=UTF-8
+encoding//src/main/resources/i18n/resource_message_zh_CN.properties=UTF-8
+encoding//src/main/resources/i18n/security_error_zh_CN.properties=UTF-8
+encoding//src/main/resources/i18n/security_message_zh_CN.properties=UTF-8
+encoding//src/main/resources/i18n/workflow_error_zh_CN.properties=UTF-8
+encoding//src/main/resources/i18n/workflow_message_zh_CN.properties=UTF-8

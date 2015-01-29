@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="GBK"?>
+
+<dictConfig name="org">
+	
+	<static name="userFilterItems" >
+		<item key="common.filter_all" value=""/>
+		<item key="org.user_fullName" value="fullName"/>
+		<item key="org.user_loginName" value="loginName"/>
+		<item key="org.user_email" value="email"/>
+		<item key="common.entity_updateDate" value="updateDate"/>
+	</static>
+	
+	<static name="userGroupFilterOperator" >
+		<item key="org.userGroupFilter_operator_equal" value="="/>
+		<item key="org.userGroupFilter_operator_greaterThen" value="&gt;"/>
+		<item key="org.userGroupFilter_operator_greaterOrEquals" value="&gt;="/>
+		<item key="org.userGroupFilter_operator_lessThen" value="&lt;"/>
+		<item key="org.userGroupFilter_operator_lessOrEquals" value="&lt;="/>
+		<item key="org.userGroupFilter_operator_like" value="like"/>
+	</static>
+	
+	<static name="userGroupFilterType" >
+		<item key="org.userGroupFilter_type_user" value="O_OU"/>
+		<item key="org.userGroupFilter_type_user_group" value="O_OG"/>
+		<item key="org.userGroupFilter_type_site" value="O_OS"/>
+		<item key="org.userGroupFilter_type_organization" value="O_OO"/>
+		<item key="org.userGroupFilter_type_property" value="O_UP"/>
+		<item key="org.userGroupFilter_type_role" value="O_OR"/>
+	</static>
+	
+	<static name="userPropertyType" >
+		<item key="org.userProperties_type_T" value="T"/>
+		<item key="org.userProperties_type_S" value="S"/>
+		<item key="org.userProperties_type_C" value="C"/>
+		<item key="org.userProperties_type_R" value="R"/>
+		<item key="org.userProperties_type_D" value="D"/>
+		<item key="org.userProperties_type_U" value="U"/>
+		<item key="org.userProperties_type_A" value="A"/>
+	</static>
+	
+	<static name="userGroupUsersExcluded" >
+		<item key="org.userGroupUsers_excluded_true" value="true"/>
+		<item key="org.userGroupUsers_excluded_false" value="false"/>
+	</static>
+	
+	<static name="userPropertiesFilterItems" >
+		<item key="common.filter_all" value=""/>
+		<item key="org.userProperties_name" value="name"/>
+		<item key="org.userProperties_description" value="description"/>
+		<item key="common.entity_updateDate" value="updateDate"/>
+	</static>
+	
+	<static name="userGroupFilterItems" >
+		<item key="common.filter_all" value=""/>
+		<item key="org.userGroup_name" value="name"/>
+		<item key="org.userGroup_description" value="description"/>
+		<item key="common.entity_updateDate" value="updateDate"/>
+	</static>
+	
+	<static name="userPropertyOptionFilterItems" >
+		<item key="common.filter_all" value=""/>
+		<item key="org.userPropertyOption_name" value="name"/>
+		<item key="org.userPropertyOption_description" value="description"/>
+		<item key="common.entity_updateDate" value="updateDate"/>
+	</static>
+	
+	<static name="userGroupFilterFilterItems" >
+		<item key="common.filter_all" value=""/>
+		<item key="org.userGroupFilter_groupName" value="groupName"/>
+		<item key="org.userGroupFilter_filterValue" value="filterValue"/>
+		<item key="common.entity_updateDate" value="updateDate"/>
+	</static>
+	
+	<static name="userGroupUsersFilterItems" >
+		<item key="common.filter_all" value=""/>
+		<item key="org.userGroupUsers_userId" value="fullName"/>
+		<item key="org.user_loginName" value="loginName"/>
+		<item key="org.userGroup_siteId" value="siteName"/>
+		<item key="org.organization_name" value="orgName"/>
+		<item key="common.entity_updateDate" value="updateDate"/>
+	</static>
+	
+	<static name="userStatus" >
+		<item key="org.user_status_A" value="A"/>
+		<item key="org.user_status_L" value="L"/>
+	</static>
+	
+	<dynamic name="userFullName" sqlId="org.userFullName"/>
+	<dynamic name="siteName" sqlId="org.siteName"/>
+	<dynamic name="getSiteNameById" sqlId="org.getSiteNameById"/>
+	<dynamic name="orgName" sqlId="org.orgName"/>
+	<dynamic name="organizationName" sqlId="org.organizationName"/>
+	<dynamic name="orgUserProperty" sqlId="org.orgUserProperty"/>
+	<dynamic name="userGroupFilterName" sqlId="org.userGroupFilterName"/>
+	<dynamic name="propertyName" sqlId="org.propertyName"/>
+	<dynamic name="propertyOption" sqlId="org.propertyOption"/>
+	<dynamic name="getFullNameById" sqlId="org.getFullNameById"/>
+	<dynamic name="getUserBySite" sqlId="org.getUserBySite"/>
+</dictConfig>

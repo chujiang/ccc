@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper   
+
+PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"   
+"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">  
+<mapper namespace="res">  
+	<resultMap id="DictItemResult" type="com.kingnod.core.dict.DataDictItem"></resultMap>
+	
+	<select id="siteName" resultMap="DictItemResult" parameterType="java.util.HashMap">
+	   select ID value,NAME name from ORG_SITE
+	</select>
+	
+	<select id="parentName" resultMap="DictItemResult" parameterType="java.util.HashMap">
+	   select ID value,NAME name from RES_FOLDER
+	</select>
+	
+	</mapper>

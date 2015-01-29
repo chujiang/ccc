@@ -1,0 +1,651 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+ PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+ "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+	<properties url="file:c:/application.properties"/>
+	<classPathEntry location="${mbg.classPathEntry.oracle.jar}"></classPathEntry>
+	<classPathEntry location="./target/classes"></classPathEntry>
+    
+    <context id="organization" targetRuntime="MyBatis3">
+    	<property name="modelNamespace" value="org"/>
+    	<property name="messageFileName" value="organization_message_zh_CN.properties"/>
+    	<plugin type="com.kingnod.mybatis.generator.plugin.NamespacePlugin"/>
+        <commentGenerator type="com.kingnod.mybatis.generator.utils.KingnodCommentGenerator">
+            <property name="suppressDate" value="false" />
+            <property name="suppressAllComments" value="false"/>
+        </commentGenerator>
+        <jdbcConnection driverClass="${mbg.oracle.jdbc.driver}" connectionURL="${mbg.oracle.jdbc.url}" userId="${mbg.oracle.jdbc.username}" password="${mbg.oracle.jdbc.password}">
+          <property name="remarksReporting" value="true"/>
+        </jdbcConnection>
+        <javaTypeResolver type="com.kingnod.mybatis.generator.types.JavaTypeResolverCustomImpl">
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>
+        <javaModelGenerator targetPackage="com.kingnod.etraining.organization.entity" targetProject="./src/main/java">
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+        <sqlMapGenerator targetPackage="com.kingnod.etraining.organization.dao.oracle" targetProject="./src/main/resources">
+        </sqlMapGenerator>
+        <javaClientGenerator targetPackage="com.kingnod.etraining.organization.dao" type="com.kingnod.mybatis.generator.utils.DaoJavaClientGenerator" targetProject="./src/main/java">
+        </javaClientGenerator>
+
+		<table tableName="ORG_SITE" domainObjectName="Site" alias="A" >
+			<property name="parentName" value="type=primitive;refTable=ORG_SITE;tableAlias=B;refColumn=NAME;columnAlias=PARENT_NAME;comment=父站点"></property>
+			<generatedKey column="ID" sqlStatement="select ORG_SITE_SEQ.nextval from dual"  type="pre"/>
+			<columnOverride column="LEVEL_NUMBER" javaType="java.lang.Integer"></columnOverride>
+		</table>
+		
+		<table tableName="ORG_SITE_HIERARCHY" domainObjectName="SiteHierarchy" alias="A" >
+			<generatedKey column="ID" sqlStatement="select ORG_SITE_HIERARCHY_SEQ.nextval from dual"  type="pre"/>
+			<columnOverride column="HIERARCHY_LEVEL" javaType="java.lang.Integer"></columnOverride>
+		</table>
+		
+		<table tableName="SYS_FUNCTION" domainObjectName="Function" alias="A" >
+			<generatedKey column="ID" sqlStatement="select ORG_ORGANIZATION_SEQ.nextval from dual" type="pre"/>
+		</table>
+		<table tableName="ORG_ORGANIZATION" domainObjectName="Organization" alias="A" >
+			<generatedKey column="ID" sqlStatement="select ORG_ORGANIZATION_SEQ.nextval from dual"  type="pre"/>
+			<columnOverride column="LEVEL_NUMBER" javaType="java.lang.Integer"></columnOverride>
+		</table>
+		
+		<table tableName="ORG_ORGANIZATION_HIERARCHY" domainObjectName="OrganizationHierarchy" alias="A" >
+			<generatedKey column="ID" sqlStatement="select ORG_ORGANIZATION_HIERARCHY_SEQ.nextval from dual"  type="pre"/>
+			<columnOverride column="HIERARCHY_LEVEL" javaType="java.lang.Integer"></columnOverride>
+		</table>
+		
+		<table tableName="ORG_USER" domainObjectName="User" alias="A" >
+			<property name="propertyData" value="type=association;column=A_ID;select=UserPropertyData.findByUserId;comment=用户配置属性"/>
+			<generatedKey column="ID" sqlStatement="select ORG_USER_SEQ.nextval from dual"  type="pre"/>
+			<columnOverride column="ADMINISTRATOR" javaType="java.lang.Boolean"></columnOverride>
+		</table>
+		<table tableName="ORG_USER_GROUP" domainObjectName="UserGroup" alias="A" >
+			<generatedKey column="ID" sqlStatement="select ORG_USER_GROUP_SEQ.nextval from dual"  type="pre"/>
+		</table>
+		<table tableName="ORG_USER_GROUP_FILTER" domainObjectName="UserGroupFilter" alias="A" >
+			<generatedKey column="ID" sqlStatement="select ORG_USER_GROUP_FILTER_SEQ.nextval from dual"  type="pre"/>
+		</table>
+		<table tableName="ORG_USER_PROPERTIES" domainObjectName="UserProperties" alias="A" >
+			<generatedKey column="ID" sqlStatement="select ORG_USER_PROPERTIES_SEQ.nextval from dual"  type="pre"/>
+		</table>
+		<table tableName="ORG_USER_PROPERTY_OPTION" domainObjectName="UserPropertyOption" alias="A" >
+			<generatedKey column="ID" sqlStatement="select ORG_USER_PROPERTY_OPTION_SEQ.nextval from dual"  type="pre"/>
+		</table>
+		<table tableName="ORG_USER_PROPERTY_DATA" domainObjectName="UserPropertyData" alias="A" >
+			<generatedKey column="ID" sqlStatement="select ORG_USER_PROPERTY_DATA_SEQ.nextval from dual"  type="pre"/>
+		</table>
+		<table tableName="ORG_USER_GROUP_USERS" domainObjectName="UserGroupUsers" alias="A" >
+			<property name="fullName" value="type=primitive;refTable=ORG_USER;tableAlias=B;refColumn=FULL_NAME;columnAlias=FULL_NAME;comment=用户名"></property>
+			<property name="loginName" value="type=primitive;refTable=ORG_USER;tableAlias=B;refColumn=LOGIN_NAME;columnAlias=LOGIN_NAME;comment=登录帐号"></property>
+			<generatedKey column="ID" sqlStatement="select ORG_USER_GROUP_USERS_SEQ.nextval from dual"  type="pre"/>
+			<columnOverride column="EXCLUDED" javaType="java.lang.Boolean"></columnOverride>
+			<columnOverride column="IS_NEW" javaType="java.lang.Boolean"></columnOverride>
+		</table>
+    </context>
+    
+    <context id="common" targetRuntime="MyBatis3">
+    	<property name="modelNamespace" value="cmn"/>
+    	<property name="messageFileName" value="common_message_zh_CN.properties"/>
+    	<plugin type="com.kingnod.mybatis.generator.plugin.NamespacePlugin"/>
+        <commentGenerator type="com.kingnod.mybatis.generator.utils.KingnodCommentGenerator">
+            <property name="suppressDate" value="false" />
+            <property name="suppressAllComments" value="false"/>
+        </commentGenerator>
+        <jdbcConnection driverClass="${mbg.oracle.jdbc.driver}" connectionURL="${mbg.oracle.jdbc.url}" userId="${mbg.oracle.jdbc.username}" password="${mbg.oracle.jdbc.password}">
+          <property name="remarksReporting" value="true"/>
+        </jdbcConnection>
+        <javaTypeResolver type="com.kingnod.mybatis.generator.types.JavaTypeResolverCustomImpl">
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>
+        <javaModelGenerator targetPackage="com.kingnod.etraining.common.entity" targetProject="./src/main/java">
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+        <sqlMapGenerator targetPackage="com.kingnod.etraining.common.dao.oracle" targetProject="./src/main/resources">
+        </sqlMapGenerator>
+        <javaClientGenerator targetPackage="com.kingnod.etraining.common.dao" type="com.kingnod.mybatis.generator.utils.DaoJavaClientGenerator" targetProject="./src/main/java">
+        </javaClientGenerator>
+
+		<table tableName="SYS_PARAMETER" domainObjectName="SysParameter" alias="A" >
+			<property name="siteName" value="type=primitive;refTable=ORG_SITE;tableAlias=B;refColumn=NAME;columnAlias=SITE_NAME;comment=站点名称"></property>
+			<generatedKey column="ID" sqlStatement="select SYS_PARAMETER_SEQ.nextval from dual" type="pre"/>
+		</table>
+		<table tableName="CMN_TEST" domainObjectName="Test" alias="A" >
+			<generatedKey column="ID" sqlStatement="select CMN_TEST_SEQ.nextval from dual" type="pre"/>
+			<!-- BOOLEAN_TEST CHAR(1) DEFAULT 0 NOT NULL -->
+			<columnOverride column="BOOLEAN_TEST" javaType="java.lang.Boolean"></columnOverride>
+			<!-- FLOAT_TEST NUMBER(16, 2) -->
+			<columnOverride column="FLOAT_TEST" javaType="java.lang.Float"></columnOverride>
+			<!-- INTEGER_TEST NUMBER(9) -->
+			<!-- SHORT_TEST NUMBER(4) -->
+		</table>
+						
+		<table tableName="SYS_ROLE" domainObjectName="Role" alias="A" >
+			<generatedKey column="ID" sqlStatement="select SYS_ROLE_SEQ.nextval from dual" type="pre"/>
+		</table>
+		
+		<table tableName="SYS_AUTHORITY" domainObjectName="Authority" alias="A" >
+			<generatedKey column="ID" sqlStatement="select SYS_ROLE_SEQ.nextval from dual" type="pre"/>
+		</table>
+		
+		<table tableName="SYS_ROLE_REF" domainObjectName="RoleRef" alias="A" >
+			<generatedKey column="ID" sqlStatement="select SYS_ROLE_REF_SEQ.nextval from dual" type="pre"/>
+		</table>
+		
+		<table tableName="SYS_MENU" domainObjectName="Menu" alias="A" >
+			<property name="authorityName" value="type=primitive;refTable=SYS_ENTITY_AUTHORITY;tableAlias=B;refColumn=AUTHORITY_NAME;columnAlias=AUTHORITY_NAME;comment=权限名"></property>
+			<property name="authorityValue" value="type=primitive;refTable=SYS_ENTITY_AUTHORITY;tableAlias=B;refColumn=AUTHORITY_VALUE;columnAlias=AUTHORITY_VALUE;comment=权限值"></property>
+			<generatedKey column="ID" sqlStatement="select SYS_ROLE_SEQ.nextval from dual" type="pre"/>
+		</table>
+		
+		
+		<table tableName="CMN_TYPE" domainObjectName="Type" alias="A" >
+			<generatedKey column="ID" sqlStatement="select CMN_TYPE_SEQ.nextval from dual" type="pre"/>
+			<columnOverride column="ROOT" javaType="java.lang.Boolean"></columnOverride>
+			<columnOverride column="INHERIT_ABLE" javaType="java.lang.Boolean"></columnOverride>
+		</table>
+		
+		<table tableName="CMN_OBJECT_RELATION" domainObjectName="ObjectRelation" alias="A" >
+			<generatedKey column="ID" sqlStatement="select CMN_OBJECT_RELATION_SEQ.nextval from dual" type="pre"/>
+		</table>
+
+		<!--通知 表信息生成  -->
+		<table tableName="SYS_NOTICE_CONFIG" domainObjectName="NoticeConfig" alias="A" >
+			<generatedKey column="ID" sqlStatement="select SYS_NOTICE_CONFIG_SEQ.nextval from dual" type="pre"/>
+		</table>
+		<table tableName="SYS_NOTICE" domainObjectName="Notice" alias="A" >
+		 <property name="noticeUsers" value="type=collection;column=ID;select=NoticeUsers.findListById;comment=用户组"/>
+		<generatedKey column="ID" sqlStatement="select SYS_NOTICE_SEQ.nextval from dual" type="pre"/>
+		</table>
+		<table tableName="SYS_NOTICE_USERS" domainObjectName="NoticeUsers" alias="A" >
+		    <property name="title" value="type=primitive;refTable=SYS_NOTICE;tableAlias=B;refColumn=TITLE;columnAlias=TITLE;comment=通知标题"></property>
+		    <property name="noticeType" value="type=primitive;refTable=SYS_NOTICE;tableAlias=B;refColumn=NOTICE_TYPE;columnAlias=NOTICE_TYPE;comment=通知类型"></property>
+		    <property name="summary" value="type=primitive;refTable=SYS_NOTICE;tableAlias=B;refColumn=SUMMARY;columnAlias=SUMMARY;comment=通知摘要"></property>
+			<generatedKey column="ID" sqlStatement="select SYS_NOTICE_USER_SEQ.nextval from dual" type="pre"/>
+		</table>
+		<table tableName="SYS_NOTICE_SETTING" domainObjectName="NoticeSettings" alias="A" >
+			<generatedKey column="ID" sqlStatement="select SYS_NOTICE_SETTINGS_SEQ.nextval from dual" type="pre"/>
+		</table>
+	    <!--    END     -->
+		<table tableName="SYS_BULLETIN" domainObjectName="Bulletin" alias="A">
+			<generatedKey column="ID" sqlStatement="select SYS_BULLETIN_SEQ.nextval from dual" type="pre"/>
+		</table>
+		
+		<table tableName="CMN_ATTACHMENT" domainObjectName="Attachment" alias="A">
+			<generatedKey column="ID" sqlStatement="select CMN_ATTACHMENT_SEQ.nextval from dual" type="pre"/>
+		</table>
+		
+		<!-- @author PiJingwei   评论表-->
+		<table tableName="CMN_EVALUATION" domainObjectName="Evaluation" alias="A">
+			<property name="typeName" value="type=primitive;refTable=CMN_TYPE;tableAlias=B;refColumn=NAME;columnAlias=A_TYPE_NAME;comment=评论类别类型名称"/>
+			<property name="creatorName" value="type=primitive;refTable=ORG_USER;tableAlias=C;refColumn=FULL_NAME;columnAlias=A_USER_FULL_NAME;comment=评论者"/>
+			<generatedKey column="ID" sqlStatement="select CMN_EVALUATION_SEQ.nextval from dual" type="pre"/>
+		</table>
+		
+    </context>
+    
+	<context id="resource" targetRuntime="MyBatis3">
+    	<property name="modelNamespace" value="res"/>
+    	<property name="messageFileName" value="resource_message_zh_CN.properties"/>
+    	<plugin type="com.kingnod.mybatis.generator.plugin.NamespacePlugin"/>
+        <commentGenerator type="com.kingnod.mybatis.generator.utils.KingnodCommentGenerator">
+            <property name="suppressDate" value="false" />
+            <property name="suppressAllComments" value="false"/>
+        </commentGenerator>
+        <jdbcConnection driverClass="${mbg.oracle.jdbc.driver}" connectionURL="${mbg.oracle.jdbc.url}" userId="${mbg.oracle.jdbc.username}" password="${mbg.oracle.jdbc.password}">
+          <property name="remarksReporting" value="true"/>
+        </jdbcConnection>
+        <javaTypeResolver type="com.kingnod.mybatis.generator.types.JavaTypeResolverCustomImpl">
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>
+        <javaModelGenerator targetPackage="com.kingnod.etraining.resource.entity" targetProject="./src/main/java">
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+        <sqlMapGenerator targetPackage="com.kingnod.etraining.resource.dao.oracle" targetProject="./src/main/resources">
+        </sqlMapGenerator>
+        <javaClientGenerator targetPackage="com.kingnod.etraining.resource.dao" type="com.kingnod.mybatis.generator.utils.DaoJavaClientGenerator" targetProject="./src/main/java">
+        </javaClientGenerator>
+
+		<table tableName="RES_TREE_NODE" domainObjectName="ResTreeNode" alias="A" >
+			<generatedKey column="ID" sqlStatement="select RES_TREE_NODE_SEQ.nextval from dual" type="pre"/>
+		</table>
+				
+		<table tableName="RES_LOCATION" domainObjectName="Location" alias="A" >
+			<property name="folderName" value="type=primitive;refTable=RES_FOLDER;tableAlias=B;refColumn=NAME;columnAlias=FORDER_NAME;comment=文件夹"></property>
+			<generatedKey column="ID" sqlStatement="select RES_LOCATION_SEQ.nextval from dual" type="pre"/>
+			<columnOverride column="LEVEL_NUMBER" javaType="java.lang.Integer"></columnOverride>
+		</table>
+		
+		<table tableName="RES_EQUIPMENT" domainObjectName="Equipment" alias="A" >
+			<property name="folderName" value="type=primitive;refTable=RES_FOLDER;tableAlias=B;refColumn=NAME;columnAlias=FORDER_NAME;comment=文件夹"></property>
+			<generatedKey column="ID" sqlStatement="select RES_EQUIPMENT_SEQ.nextval from dual" type="pre"/>
+		</table>
+		
+		<table tableName="RES_FOLDER" domainObjectName="ResourceFolder" alias="A" >
+			<generatedKey column="ID" sqlStatement="select RES_FOLDER_SEQ.nextval from dual" type="pre"/>
+			<columnOverride column="LEVEL_NUMBER" javaType="java.lang.Integer"></columnOverride>
+		</table>
+		
+		<table tableName="RES_FOLDER_HIERARCHY" domainObjectName="ResourceFolderHierarchy" alias="A" >
+			<generatedKey column="ID" sqlStatement="select RES_FOLDER_HIERARCHY_SEQ.nextval from dual"  type="pre"/>
+			<columnOverride column="HIERARCHY_LEVEL" javaType="java.lang.Integer"></columnOverride>
+		</table>
+		
+		<table tableName="RES_TRAINER" domainObjectName="Trainer" alias="A" >
+			<property name="folderName" value="type=primitive;refTable=RES_FOLDER;tableAlias=B;refColumn=NAME;columnAlias=FORDER_NAME;comment=文件夹"></property>
+			<generatedKey column="ID" sqlStatement="select RES_TRAINER_SEQ.nextval from dual" type="pre"/>
+		</table>
+		
+		<table tableName="RES_ATTENDANCE" domainObjectName="Attendance" alias="A" >
+			<property name="folderName" value="type=primitive;refTable=RES_FOLDER;tableAlias=B;refColumn=NAME;columnAlias=FORDER_NAME;comment=文件夹"></property>
+			<property name="activityName" value="type=primitive;refTable=ATY_ACTIVITY;tableAlias=C;refColumn=NAME;columnAlias=ACTIVITY_NAME;comment=活动"></property>
+			<generatedKey column="ID" sqlStatement="select RES_ATTENDANCE_SEQ.nextval from dual" type="pre"/>
+		</table>
+		
+		<table tableName="RES_ATTENDANCE_PROJECT" domainObjectName="AttendanceProject" alias="A" >
+			<property name="attendanceName" value="type=primitive;refTable=RES_ATTENDANCE;tableAlias=B;refColumn=NAME;columnAlias=ATTENDANCE_NAME;comment=签到表"></property>
+			<property name="trainerName" value="type=primitive;refTable=RES_TRAINER;tableAlias=C;refColumn=NAME;columnAlias=TRAINER_NAME;comment=讲师"></property>
+			<property name="userName" value="type=primitive;refTable=ORG_USER;tableAlias=D;refColumn=FULL_NAME;columnAlias=USER_NAME;comment=用户"></property>
+			<generatedKey column="ID" sqlStatement="select RES_ATTENDANCE_PROJECT_SEQ.nextval from dual" type="pre"/>
+		</table>
+		
+		<table tableName="RES_ATTENDANCE_DETAILS" domainObjectName="AttendanceDetails" alias="A" >
+			<property name="projectName" value="type=primitive;refTable=RES_ATTENDANCE_PROJECT;tableAlias=B;refColumn=PROJECT_NAME;columnAlias=PROJECT_NAME;comment=项目名"></property>
+			<property name="userName" value="type=primitive;refTable=ORG_USER;tableAlias=C;refColumn=FULL_NAME;columnAlias=USER_NAME;comment=用户"></property>
+			<generatedKey column="ID" sqlStatement="select RES_ATTENDANCE_DETAILS_SEQ.nextval from dual" type="pre"/>
+		</table>
+				
+		<table tableName="RES_SCORE_SHEET" domainObjectName="ScoreSheet" alias="A" >
+			<property name="folderName" value="type=primitive;refTable=RES_FOLDER;tableAlias=B;refColumn=NAME;columnAlias=FORDER_NAME;comment=文件夹"></property>
+			<generatedKey column="ID" sqlStatement="select RES_SCORE_SHEET_SEQ.nextval from dual" type="pre"/>
+		</table>
+		
+		<table tableName="RES_LEARNER_SCORE" domainObjectName="LearnerScore" alias="A" >
+			<property name="scoreName" value="type=primitive;refTable=RES_SCORE_SHEET;tableAlias=B;refColumn=NAME;columnAlias=SCORE_SHEET_NAME;comment=成绩名"></property>
+			<property name="userName" value="type=primitive;refTable=ORG_USER;tableAlias=C;refColumn=FULL_NAME;columnAlias=USER_NAME;comment=学员"></property>
+			<generatedKey column="ID" sqlStatement="select RES_LEARNER_SCORE_SEQ.nextval from dual" type="pre"/>
+		</table>
+		
+		<table tableName="RES_SCORE_RELATION" domainObjectName="ScoreRelation" alias="A" >
+			<property name="scoreName" value="type=primitive;refTable=RES_SCORE_SHEET;tableAlias=B;refColumn=NAME;columnAlias=SCORE_SHEET_NAME;comment=成绩名"></property>
+			<generatedKey column="ID" sqlStatement="select RES_SCORE_RELATION_SEQ.nextval from dual" type="pre"/>
+		</table>
+		
+    </context>
+    
+    <context id="exam" targetRuntime="MyBatis3">
+    	<property name="modelNamespace" value="exm"/>
+    	<property name="messageFileName" value="exam_message_zh_CN.properties"/>
+    	<plugin type="com.kingnod.mybatis.generator.plugin.NamespacePlugin"/>
+        <commentGenerator type="com.kingnod.mybatis.generator.utils.KingnodCommentGenerator">
+            <property name="suppressDate" value="false" />
+            <property name="suppressAllComments" value="false"/>
+        </commentGenerator>
+        <jdbcConnection driverClass="${mbg.oracle.jdbc.driver}" connectionURL="${mbg.oracle.jdbc.url}" userId="${mbg.oracle.jdbc.username}" password="${mbg.oracle.jdbc.password}">
+          <property name="remarksReporting" value="true"/>
+        </jdbcConnection>
+        <javaTypeResolver type="com.kingnod.mybatis.generator.types.JavaTypeResolverCustomImpl">
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>
+        <javaModelGenerator targetPackage="com.kingnod.etraining.exam.entity" targetProject="./src/main/java">
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+        <sqlMapGenerator targetPackage="com.kingnod.etraining.exam.dao.oracle" targetProject="./src/main/resources">
+        </sqlMapGenerator>
+        <javaClientGenerator targetPackage="com.kingnod.etraining.exam.dao" type="com.kingnod.mybatis.generator.utils.DaoJavaClientGenerator" targetProject="./src/main/java">
+        </javaClientGenerator>
+        
+        <table tableName="EXM_QUESTION" domainObjectName="Question" alias="A"><!-- 试题表 -->
+        	<property name="questionAnswers" value="type=collection;column=A_ID;select=QuestionAnswer.findListByQuestionAnswer;comment=查询答案"/>
+        	<property name="childQuestionList" value="type=collection;column=A_ID;select=Question.findListByParentId;comment=查询子题目"/>
+			<property name="knowledgeName" value="type=primitive;refTable=EXM_QUESTION_KNOWLEDGE;tableAlias=B;refColumn=KNOWLEDGE_NAME;columnAlias=QUESTION_KNOWLEDGE_NAME;comment=知识点名称" />
+			<property name="courseName" value="type=primitive;refTable=CRS_COURSE_INFO;tableAlias=C;refColumn=COURSE_TITLE;columnAlias=COURSE_INFO_COURSE_TITLE;comment=课程名"/><!-- 根据A_COURSE_ID 去CRS_COURSE_INFO表中找COURSE_TITLE -->
+			<property name="questionKnowledges" value="type=collection;column=A_ID;select=QuestionKnowledge.findListById;comment=知识点列表"/>
+			<generatedKey column="ID" sqlStatement="select EXM_QUESTION_SEQ.nextval from dual" type="pre"/>
+			<columnOverride column="SCORE" javaType="java.lang.Float" />
+			<columnOverride column="KNOWLEDGE_ID" javaType="java.lang.String" />
+			<columnOverride column="COURSE_ID" javaType="java.lang.String" />
+		</table>
+		
+		<table tableName="EXM_QUESTION_ANSWER" domainObjectName="QuestionAnswer" alias="A"><!-- 试题答案选项表表 -->
+			<generatedKey column="ID" sqlStatement="select EXM_QUESTION_SEQ.nextval from dual" type="pre"/>
+			<columnOverride column="CORRECT" javaType="java.lang.Boolean" />
+			<columnOverride column="SCORE" javaType="java.lang.Float" />
+		</table>
+		
+		<table tableName="EXM_EXAM_PAPER" domainObjectName="Paper" alias="A"><!-- 试卷表 -->
+			<property name="questionTestGroups" value="type=collection;column=A_ID;select=QuestionTestGroup.findListByQuestionTestGroup;comment=试卷"/>
+			<generatedKey column="ID" sqlStatement="select EXM_EXAM_PAPER_SEQ.nextval from dual" type="pre"/>
+			<columnOverride column="SCORE" javaType="java.lang.Float" />
+		</table>
+		
+		<table tableName="EXM_TEST_GROUP" domainObjectName="TestGroup" alias="A"><!-- 测试区表 -->
+			<property name="questionTestGroups" value="type=collection;column=A_ID;select=QuestionTestGroup.findListByQuestionTestGroup;comment=试卷"/>
+			<generatedKey column="ID" sqlStatement="select EXM_TEST_GROUP_SEQ.nextval from dual" type="pre"/>
+			<columnOverride column="QUESTION_NUMBER" javaType="java.lang.Integer"></columnOverride>
+			<columnOverride column="SCORE" javaType="java.lang.Integer"/>
+			<columnOverride column="DESCRIPTION" javaType="java.lang.String" jdbcType="VARCHAR"/>
+		</table>
+		
+		<table tableName="EXM_QUESTION_TEST_GROUP" domainObjectName="QuestionTestGroup" alias="A"><!-- 试题与测试区表(用于固定选题) -->
+			<property name="question" value="type=association;column=A_QUESTION_ID;select=Question.findById;comment=试题"/>
+			<property name="questionContent"  value="type=primitive;refTable=EXM_QUESTION;tableAlias=B;refColumn=CONTENT;columnAlias=QUESTION_CONTENT;comment=试题内容"/>
+			<generatedKey column="ID" sqlStatement="select EXM_QUESTION_TEST_GROUP_SEQ.nextval from dual" type="pre"/>
+			<columnOverride column="SCORE" javaType="java.lang.Float" />
+		</table>
+		
+		<table tableName="EXM_EXAMINEE_QUESTION" domainObjectName="ExamineeQuestion" alias="A"><!-- 考生试题表 -->
+			<property name="paper" value="type=association;column=A_EXAM_PAPER_ID;select=Paper.findById;comment=试卷"/>
+			<property name="examination" value="type=association;column=A_EXAMINATION_ID;select=Examination.findById;comment=考试活动"/>
+			<property name="question" value="type=association;column=A_QUESTION_ID;select=Question.findById;comment=试题"/>
+			<property name="questionAnswers" value="type=collection;column=A_QUESTION_ID;select=QuestionAnswer.findListByExamineeAnswer;comment=答案"/>
+			<property name="user" value="type=association;column=A_USER_ID;select=User.findById;comment=考生"/>
+			<generatedKey column="ID" sqlStatement="select EXM_EXAMINEE_QUESTION_SEQ.nextval from dual" type="pre"/>
+			<columnOverride column="SCORE" javaType="java.lang.Float" />
+			<columnOverride column="EXAM_NUMBER" javaType="java.lang.Integer" />
+			<columnOverride column="REVIEWED" javaType="java.lang.Boolean" />
+		</table>
+		
+		<table tableName="EXM_EXAMINEE_ANSWER" domainObjectName="ExamineeAnswer" alias="A"><!-- 考生试题答案选项表 -->
+			<property name="question" value="type=association;column=A_QUESTION_ID;select=Question.findListById;comment=试题"/>
+			<property name="questionAnswers" value="type=collection;column=A_ID;select=QuestionAnswer.findListByQuestionAnswer;comment=查询答案"/>
+			<generatedKey column="ID" sqlStatement="select EXM_EXAMINEE_ANSWER_SEQ.nextval from dual" type="pre"/>
+		</table>
+		
+		<table tableName="EXM_KNOWLEDGE" domainObjectName="Knowledge" alias="A"><!-- 知识点表 -->
+			<generatedKey column="ID" sqlStatement="select EXM_KNOWLEDGE_SEQ.nextval from dual" type="pre"/>
+		</table>
+		
+		<table tableName="EXM_QUESTION_KNOWLEDGE" domainObjectName="QuestionKnowledge" alias="A"><!-- 试题知识点关联表 -->
+			<property name="question" value="type=association;column=A_QUESTION_ID;select=Question.findById;comment=试题"/>
+			<property name="knowledge" value="type=association;column=A_KNOWLEDGE_ID;select=Knowledge.findById;comment=知识点"/>
+			<generatedKey column="ID" sqlStatement="select EXM_QUESTION_KNOWLEDGE_SEQ.nextval from dual" type="pre"/>
+		</table>
+		
+		<table tableName="EXM_GENERATING_PAPER_SCOPE" domainObjectName="GeneratingPaperScope" alias="A"><!-- 自动组卷范围表 -->
+			<property name="questionName" value="type=primitive;refTable=RES_FOLDER;tableAlias=B;refColumn=NAME;columnAlias=FOLDER_NAME;comment=题库名称"/>
+			<property name="testGroupName" value="type=primitive;refTable=EXM_TEST_GROUP;tableAlias=C;refColumn=NAME;columnAlias=TEST_GROUP_NAME;comment=题纲名称"/>
+			<generatedKey column="ID" sqlStatement="select EXM_GENERATING_PAPER_SCOPE_SEQ.nextval from dual" type="pre"/>
+			<columnOverride column="QUESTION_FOLDER_ID" javaType="java.lang.String"/>
+		</table>
+		
+		<table tableName="EXM_GENERATING_PAPER_RULE" domainObjectName="GeneratingPaperRule" alias="A"><!-- 自动组卷规则表 -->
+			<generatedKey column="ID" sqlStatement="select EXM_GENERATING_PAPER_RULE_SEQ.nextval from dual" type="pre"/>
+			<columnOverride column="EVERY_QUESTION_SCORE" javaType="java.lang.Float" />
+			<columnOverride column="PART_CORRECT_SCORE" javaType="java.lang.Float" />
+			<columnOverride column="WRONG_SCORE" javaType="java.lang.Float" />
+			<columnOverride column="NOT_SCORE" javaType="java.lang.Float" />
+			<columnOverride column="QUANTITY_QUESTION" javaType="java.lang.Integer" />
+			<columnOverride column="AMOUNT_QUESTION" javaType="java.lang.Integer" />
+		</table>
+		
+    </context>
+    
+    <context id="course" targetRuntime="MyBatis3">
+    	<property name="modelNamespace" value="crs"/>
+    	<property name="messageFileName" value="course_message_zh_CN.properties"/>
+    	<plugin type="com.kingnod.mybatis.generator.plugin.NamespacePlugin"/>
+        <commentGenerator type="com.kingnod.mybatis.generator.utils.KingnodCommentGenerator">
+            <property name="suppressDate" value="false" />
+            <property name="suppressAllComments" value="false"/>
+        </commentGenerator>
+        <jdbcConnection driverClass="${mbg.oracle.jdbc.driver}" connectionURL="${mbg.oracle.jdbc.url}" userId="${mbg.oracle.jdbc.username}" password="${mbg.oracle.jdbc.password}">
+          <property name="remarksReporting" value="true"/>
+        </jdbcConnection>
+        <javaTypeResolver type="com.kingnod.mybatis.generator.types.JavaTypeResolverCustomImpl">
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>
+        <javaModelGenerator targetPackage="com.kingnod.etraining.course.entity" targetProject="./src/main/java">
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+        <sqlMapGenerator targetPackage="com.kingnod.etraining.course.dao.oracle" targetProject="./src/main/resources">
+        </sqlMapGenerator>
+        <javaClientGenerator targetPackage="com.kingnod.etraining.course.dao" type="com.kingnod.mybatis.generator.utils.DaoJavaClientGenerator" targetProject="./src/main/java">
+        </javaClientGenerator>
+
+		<table tableName="CRS_PERFORMANCE" domainObjectName="Performance" alias="A" >
+			<generatedKey column="ID" sqlStatement="select CRS_PERFORMANCE_SEQ.nextval from dual" type="pre"/>
+		</table>
+		<table tableName="CRS_SCO_PERFORMANCE" domainObjectName="SCOPerformance" alias="A" >
+			<generatedKey column="ID" sqlStatement="select CRS_SCO_PERFORMANCE_SEQ.nextval from dual" type="pre"/>
+		</table>
+		<table tableName="CRS_ATTEMP" domainObjectName="Attemp" alias="A" >
+			<generatedKey column="ID" sqlStatement="select CRS_ATTEMP_SEQ.nextval from dual" type="pre"/>
+		</table>
+		
+		
+		<table tableName="CRS_SCORM_FILE" domainObjectName="ScormFile" alias="A" >
+		<property name="items" value="type=collection;column=A_ITEM_ID;select=CRSItemInfo.findById;comment=SCO列表"/>
+		<generatedKey column="ID" sqlStatement="select CRS_SCORM_FILE_SEQ.nextval from dual"  type="pre"/>
+		</table>
+		
+		<table tableName="CRS_COURSE_EVALUATION" domainObjectName="CourseEvaluation" alias="A">
+		<property name="typeName" value="type=primitive;refTable=CMN_TYPE;tableAlias=B;refColumn=NAME;columnAlias=A_TYPE_NAME;comment=评论类型"/>
+		<generatedKey column="ID" sqlStatement="select CRS_COURSE_EVALUATION_SEQ.nextval from dual"  type="pre"/>
+		</table>
+		
+		<table tableName="CRS_ITEM_INFO" domainObjectName="ItemInfo" alias="A" >
+		<property name="scormFile" value="type=primitive;refTable=CRS_SCORM_FILE;tableAlias=B;refColumn=FILE_NAME;columnAlias=A_FILE_NAME;comment=File列表"/>
+		<property name="course"  value="type=primitive;refTable=CRS_COURSE_INFO;tableAlias=C;refColumn=COURSE_TITLE;columnAlias=A_COURSE_TITLE;comment=所属课程"/>
+		<generatedKey column="ID" sqlStatement="select CRS_ITEM_INFO_SEQ.nextval from dual"  type="pre"/>
+   		</table>
+
+		<table tableName="CRS_COURSE_INFO" domainObjectName="CourseInfo" alias="A" >
+		<property name="items" value="type=collection;column=A_ITEM_ID;select=CRSItemInfo.findById;comment=SCO列表"/>
+		<generatedKey column="ID" sqlStatement="select CRS_COURSE_INFO_SEQ.nextval from dual"  type="pre"/>
+		<columnOverride column="MASTERY_SCORE" javaType="java.lang.Float" />
+		</table>
+		
+    </context>
+    
+    
+	<context id="activity" targetRuntime="MyBatis3">
+    	<property name="modelNamespace" value="aty"/>
+    	<property name="messageFileName" value="activity_message_zh_CN.properties"/>
+    	<plugin type="com.kingnod.mybatis.generator.plugin.NamespacePlugin"/>
+        <commentGenerator type="com.kingnod.mybatis.generator.utils.KingnodCommentGenerator">
+            <property name="suppressDate" value="false" />
+            <property name="suppressAllComments" value="false"/>
+        </commentGenerator>
+        <jdbcConnection driverClass="${mbg.oracle.jdbc.driver}" connectionURL="${mbg.oracle.jdbc.url}" userId="${mbg.oracle.jdbc.username}" password="${mbg.oracle.jdbc.password}">
+          <property name="remarksReporting" value="true"/>
+        </jdbcConnection>
+        <javaTypeResolver type="com.kingnod.mybatis.generator.types.JavaTypeResolverCustomImpl">
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>
+        <javaModelGenerator targetPackage="com.kingnod.etraining.activity.entity" targetProject="./src/main/java">
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+        <sqlMapGenerator targetPackage="com.kingnod.etraining.activity.dao.oracle" targetProject="./src/main/resources">
+        </sqlMapGenerator>
+        <javaClientGenerator targetPackage="com.kingnod.etraining.activity.dao" type="com.kingnod.mybatis.generator.utils.DaoJavaClientGenerator" targetProject="./src/main/java">
+        </javaClientGenerator>
+        
+         <table tableName="ATY_FOLDER" domainObjectName="ActivityFolder" alias="A" >
+			<generatedKey column="ID" sqlStatement="select ATY_FOLDER_SEQ.nextval from dual"  type="pre"/>
+			<columnOverride column="HIERARCHY_LEVEL" javaType="java.lang.Integer"></columnOverride>
+		</table>
+		
+		<table tableName="ATY_FOLDER_HIERARCHY" domainObjectName="ActivityFolderHierarchy" alias="A" >
+			<generatedKey column="ID" sqlStatement="select ATY_FOLDER_HIERARCHY_SEQ.nextval from dual"  type="pre"/>
+			<columnOverride column="HIERARCHY_LEVEL" javaType="java.lang.Integer"></columnOverride>
+		</table>
+
+		<table tableName="ATY_TRAINING_PLAN" domainObjectName="TrainingPlan" alias="A" >
+			<property name="typeName" value="type=primitive;refTable=CMN_TYPE;tableAlias=B;refColumn=NAME;columnAlias=CMN_TYPE_NAME;comment=培训计划类别"></property>
+			<property name="userName" value="type=primitive;refTable=ORG_USER;tableAlias=C;refColumn=FULL_NAME;columnAlias=ORG_USER_FULL_NAME;comment=起草人"></property>
+			<generatedKey column="ID" sqlStatement="select ATY_TRAINING_PLAN_SEQ.nextval from dual" type="pre"/>
+		</table>
+		<table tableName="ATY_TRAINING_PLAN_ITEM" domainObjectName="TrainingPlanItem" alias="A" >
+			<property name="trainingPlanName" value="type=primitive;refTable=ATY_TRAINING_PLAN;tableAlias=B;refColumn=NAME;columnAlias=TRAINING_PLAN_NAME;comment=培训计划"></property>
+			<property name="typeName" value="type=primitive;refTable=CMN_TYPE;tableAlias=C;refColumn=NAME;columnAlias=CMN_TYPE_NAME;comment=项目类别"></property>
+			<property name="userName" value="type=primitive;refTable=ORG_USER;tableAlias=D;refColumn=FULL_NAME;columnAlias=ORG_USER_FULL_NAME;comment=项目负责人"></property>
+			<generatedKey column="ID" sqlStatement="select ATY_TRAINING_PLAN_ITEM_SEQ.nextval from dual" type="pre"/>
+		</table>
+		<table tableName="ATY_TRAINING_PLAN_ITEM_COST" domainObjectName="TrainingPlanItemCost" alias="A" >
+			<property name="trainingPlanItemName" value="type=primitive;refTable=ATY_TRAINING_PLAN_ITEM;tableAlias=B;refColumn=NAME;columnAlias=TRAINING_PLAN_ITEM_NAME;comment=培训计划项目"></property>
+			<generatedKey column="ID" sqlStatement="select ATY_PLAN_ITEM_COST_SEQ.nextval from dual" type="pre"/>
+			<columnOverride column="PRICE" javaType="java.lang.Float"></columnOverride>
+			<columnOverride column="TOTAL" javaType="java.lang.Float"></columnOverride>
+		</table>
+		
+		
+		<table tableName="ATY_TRAINING_PLAN_ACTIVITY" domainObjectName="TrainingPlanActivity" alias="A" >
+			<property name="processName" value="type=primitive;refTable=ATY_TRAINING_PLAN_PROCESS;tableAlias=B;refColumn=NAME;columnAlias=PROCESS_NAME;comment=项目执行"></property>
+			<generatedKey column="ID" sqlStatement="select ATY_TRAINING_PLAN_ACTIVITY_SEQ.nextval from dual" type="pre"/>
+		</table>
+		
+		<table tableName="ATY_TRAINING_PLAN_PROCESS" domainObjectName="TrainingPlanProcess" alias="A">
+			<generatedKey column="ID" sqlStatement="select ATY_TRAINING_PLAN_PROCESS_SEQ.nextval from dual" type="pre"/>
+		</table>
+		
+		<table tableName="ATY_ENROLL_LEARNER_FILTER" domainObjectName="EnrollLearnerFilter" alias="A" >
+			<generatedKey column="ID" sqlStatement="select ATY_ENROLL_LEARNER_SEQ.nextval from dual"  type="pre"/>
+		</table>
+		
+		<table tableName="ATY_ENROLL_LEARNER" domainObjectName="EnrollLearner" alias="A">
+			<property name="fullName" value="type=primitive;refTable=ORG_USER;tableAlias=B;refColumn=FULL_NAME;columnAlias=FULL_NAME;comment=学员姓名"></property>
+			<generatedKey column="ID" sqlStatement="select ATY_ENROLL_LEARNER_SEQ.nextval from dual" type="pre"/>
+			<columnOverride column="EXCLUDED" javaType="java.lang.Boolean"></columnOverride>
+		</table>
+		
+		<table tableName="ATY_FACE_TEACHING" domainObjectName="FaceTeaching" alias="A">
+			<generatedKey column="ID" sqlStatement="select ATY_FACE_TEACHING_SEQ.nextval from dual" type="pre"/>
+		</table>
+		
+		<table tableName="ATY_FACE_TEACHING_ITEM" domainObjectName="FaceTeachingItem" alias="A">
+			<generatedKey column="ID" sqlStatement="select ATY_FACE_TEACHING_ITEM_SEQ.nextval from dual" type="pre"/>
+		</table>
+		
+		<table tableName="ATY_FACE_TEACHING_ITEM_COST" domainObjectName="FaceTeachingItemCost" alias="A">
+			<generatedKey column="ID" sqlStatement="select ATY_TEACHING_ITEM_COST_SEQ.nextval from dual" type="pre"/>
+		</table>
+		
+		<table tableName="ATY_WOKFLOW_BUSINESS" domainObjectName="WokflowBusiness" alias="A">
+			<generatedKey column="ID" sqlStatement="select ATY_WOKFLOW_BUSINESS_SEQ.nextval from dual" type="pre"/>
+		</table>
+		
+		<table tableName="ATY_EXAMINATION" domainObjectName="Examination" alias="A"><!-- 考试表 --> <!-- 一对一 -->
+			<property name="paper" value="type=association;column=A_ATY_PAPER_ID;select=Paper.findById;comment=试卷名称"></property>
+			<property name="paperName" value="type=primitive;refTable=EXM_EXAM_PAPER;tableAlias=B;refColumn=NAME;columnAlias=A_PAPER_NAME;comment=试卷名称"/>
+			<generatedKey column="ID" sqlStatement="select ATY_EXAMINATION_SEQ.nextval from dual" type="pre"/>
+		</table>
+		
+		<table tableName="ATY_ENROLL_EXAM_WORKER" domainObjectName="EnrollExamWorker" alias="A">
+			<generatedKey column="ID" sqlStatement="select ATY_ENROLL_EXAM_WORKER_SEQ.nextval from dual" type="pre"/>
+		</table>
+		
+		<table tableName="ATY_EXAMINEES_HISTORY" domainObjectName="ExamineesHistory" alias="A"><!-- 考生考试记录表 -->
+			<property name="examination" value="type=association;column=A_EXAMINATION_ID;select=Examination.findById;comment=考生"/>
+			<property name="paper" value="type=association;column=A_ATY_PAPER_ID;select=Paper.findById;comment=试卷"/>
+			<generatedKey column="ID" sqlStatement="select ATY_EXAMINEES_HISTORY_SEQ.nextval from dual" type="pre"/>
+			<columnOverride column="GENERATED" javaType="java.lang.Boolean" />
+			<columnOverride column="ANSWER_TIME_LENGTH" javaType="java.lang.Double" />
+			<columnOverride column="TIMES" javaType="java.lang.Integer" />
+			<columnOverride column="SCORE" javaType="java.lang.Float" />
+			<columnOverride column="TOTALSCORE" javaType="java.lang.Float" />
+			<columnOverride column="SURPLUS_TIME" javaType="java.lang.Integer" />
+		</table>
+			
+		<table tableName="ATY_PERIOD" domainObjectName="Period" alias="A">
+			<generatedKey column="ID" sqlStatement="select ATY_PERIOD_SEQ.nextval from dual" type="pre"/>
+		</table>
+		
+		<table tableName="ATY_TIMING_TASK" domainObjectName="TimingTask" alias="A">
+			<generatedKey column="ID" sqlStatement="select ATY_TIMING_TASK_SEQ.nextval from dual" type="pre"/>
+		</table>
+		
+		<table tableName="ATY_ACTIVITY" domainObjectName="ActivityDetails" alias="A">
+		</table>
+		
+		<table tableName="ATY_ELEARNING" domainObjectName="Elearning" alias="A" >
+			<property name="folderName" value="type=primitive;refTable=ATY_FOLDER;tableAlias=C;refColumn=NAME;columnAlias=FORDER_NAME;comment=文件夹"></property>
+			<property name="trainerName" value="type=primitive;refTable=RES_TRAINER;tableAlias=B;refColumn=NAME;columnAlias=TRAINER_NAME;comment=讲师"></property>
+			<property name="courseName" value="type=primitive;refTable=CRS_COURSE_INFO;tableAlias=D;refColumn=COURSE_TITLE;columnAlias=COURSE_TITLE;comment=课程"></property>
+			<generatedKey column="ID" sqlStatement="select ATY_ELEARNING_SEQ.nextval from dual" type="pre"/>
+		</table>
+		
+		<table tableName="ATY_USER_ACTIVITY" domainObjectName="UserActivity" alias="A">
+			<generatedKey column="ID" sqlStatement="select ATY_USER_ACTIVITY_SEQ.nextval from dual" type="pre"/>
+		</table>
+		
+				
+		<table tableName="ATY_RECOMMEND_OBJECT" domainObjectName="RecommendObject" alias="A">
+		    <property name="activity" value="type=primitive;refTable=ATY_ACTIVITY;tableAlias=B;refColumn=NAME;columnAlias=ACTIVITY_NAME;comment=活动名称"></property>
+			<generatedKey column="ID" sqlStatement="select ATY_RECOMMEND_OBJECT_SEQ.nextval from dual" type="pre"/>
+		</table>
+		
+		
+		<table tableName="USER_ACTIVITY_LIST" domainObjectName="UserActivityList" alias="A">
+		</table>
+    </context>
+    
+    <context id="security" targetRuntime="MyBatis3">
+    	<property name="modelNamespace" value="aty"/>
+    	<property name="messageFileName" value="security_message_zh_CN.properties"/>
+    	<plugin type="com.kingnod.mybatis.generator.plugin.NamespacePlugin"/>
+        <commentGenerator type="com.kingnod.mybatis.generator.utils.KingnodCommentGenerator">
+            <property name="suppressDate" value="false" />
+            <property name="suppressAllComments" value="false"/>
+        </commentGenerator>
+        <jdbcConnection driverClass="${mbg.oracle.jdbc.driver}" connectionURL="${mbg.oracle.jdbc.url}" userId="${mbg.oracle.jdbc.username}" password="${mbg.oracle.jdbc.password}">
+          <property name="remarksReporting" value="true"/>
+        </jdbcConnection>
+        <javaTypeResolver type="com.kingnod.mybatis.generator.types.JavaTypeResolverCustomImpl">
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>
+        <javaModelGenerator targetPackage="com.kingnod.etraining.security.entity" targetProject="./src/main/java">
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+        <sqlMapGenerator targetPackage="com.kingnod.etraining.security.dao.oracle" targetProject="./src/main/resources">
+        </sqlMapGenerator>
+        <javaClientGenerator targetPackage="com.kingnod.etraining.security.dao" type="com.kingnod.mybatis.generator.utils.DaoJavaClientGenerator" targetProject="./src/main/java">
+        </javaClientGenerator>
+        
+        <table tableName="SYS_BIT_MAPPING" domainObjectName="BitMapping" alias="A" ></table>
+		
+		<table tableName="SYS_ENTITY_READ_PERMISSION" domainObjectName="EntityReadPermission" alias="A" ></table>
+		
+		<table tableName="SYS_ENTITY_PERMISSION" domainObjectName="EntityPermission" alias="A" ></table>
+		
+		<table tableName="SYS_ENTITY_AUTHORITY" domainObjectName="EntityAuthority" alias="A">
+			<generatedKey column="ID" sqlStatement="select ATY_USER_ACTIVITY_SEQ.nextval from dual" type="pre"/>
+		</table>
+		
+	</context>
+	
+	<context id="report" targetRuntime="MyBatis3">
+    	<property name="modelNamespace" value="rpt"/>
+    	<property name="messageFileName" value="report_message_zh_CN.properties"/>
+    	<plugin type="com.kingnod.mybatis.generator.plugin.NamespacePlugin"/>
+        <commentGenerator type="com.kingnod.mybatis.generator.utils.KingnodCommentGenerator">
+            <property name="suppressDate" value="false" />
+            <property name="suppressAllComments" value="false"/>
+        </commentGenerator>
+        <jdbcConnection driverClass="${mbg.oracle.jdbc.driver}" connectionURL="${mbg.oracle.jdbc.url}" userId="${mbg.oracle.jdbc.username}" password="${mbg.oracle.jdbc.password}">
+          <property name="remarksReporting" value="true"/>
+        </jdbcConnection>
+        <javaTypeResolver type="com.kingnod.mybatis.generator.types.JavaTypeResolverCustomImpl">
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>
+        <javaModelGenerator targetPackage="com.kingnod.etraining.report.entity" targetProject="./src/main/java">
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+        <sqlMapGenerator targetPackage="com.kingnod.etraining.report.dao.oracle" targetProject="./src/main/resources">
+        </sqlMapGenerator>
+        <javaClientGenerator targetPackage="com.kingnod.etraining.report.dao" type="com.kingnod.mybatis.generator.utils.DaoJavaClientGenerator" targetProject="./src/main/java">
+        </javaClientGenerator>
+
+		<table tableName="RPT_FOLDER" domainObjectName="ReportFolder" alias="A" >
+			<generatedKey column="ID" sqlStatement="select RPT_FOLDER_SEQ.nextval from dual" type="pre"/>
+			<columnOverride column="LEVEL_NUMBER" javaType="java.lang.Integer"></columnOverride>
+		</table>
+		
+		<table tableName="RPT_FOLDER_HIERARCHY" domainObjectName="ReportFolderHierarchy" alias="A" >
+			<generatedKey column="ID" sqlStatement="select RPT_FOLDER_HIERARCHY_SEQ.nextval from dual"  type="pre"/>
+			<columnOverride column="HIERARCHY_LEVEL" javaType="java.lang.Integer"></columnOverride>
+		</table>
+		
+		<table tableName="COURSE_MASSAGE" domainObjectName="CourseMessage" alias="A" >
+		</table>
+    </context>
+
+</generatorConfiguration>

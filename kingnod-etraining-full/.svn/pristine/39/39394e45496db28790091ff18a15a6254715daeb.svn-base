@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<project name="simpleapp" default="all" basedir=".">
+	<property name="dasho.home" value="F:/software/Java加密/DashOEval 6.10" />
+
+	<target name="all" depends="clean, dasho" />
+
+							<target name="dasho">
+								<rename src="target/classes" dest="target/classes1" />
+								<java fork="true" classname="DashOPro" classpath="F:/software/Java加密/DashOEval 6.10/DashOPro.jar">
+									<arg value="-v" />
+									<arg file="project.dox" />
+								</java>
+							</target>
+
+	<target name="clean">
+		<delete quiet="true" includeemptydirs="true">
+			<fileset dir="classes" />
+			<fileset dir="obfuscated" />
+			<fileset dir=".">
+				<include name="*-mapreport.txt" />
+				<include name="*-report.txt" />
+				<include name="*.map" />
+			</fileset>
+		</delete>
+	</target>
+
+</project>

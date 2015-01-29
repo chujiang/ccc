@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="GBK"?>
+
+<dictConfig name="crs">
+	
+	<static name="costType" >
+		<item key="crs.costType_personal" value="P"/>
+		<item key="crs.costType_company" value="C"/>
+	</static>
+	<static name="courseType" >
+		<item key="common.filter_all" value=""/>
+		<item key="crs.courseType_scorm" value="S"/>
+		<item key="crs.courseType_noscorm" value="F"/>
+	</static>
+	
+	<static name="control">
+		<item key = "crs.courseInfo_control_system" value="0" />
+		<item key="crs.courseInfo_control_course" value="1" />
+	</static>
+	
+	<static name="courseInfoFilterItems">
+		<item key="common.filter_all" value=""/>
+		<item key="crs.courseInfo_courseTitle" value="courseTitle" />
+		<item key="common.entity_updateDate" value="updateDate" />
+	</static>
+	
+	<static name="contentServerFilterItems">
+		<item key="common.filter_all" value=""/>
+		<item key="crs.contentServer_name" value="name" />
+		<item key="crs.contentServer_rootPath" value="rootPath" />
+		<item key="crs.contentServer_ftpServer" value="ftpServer" />
+		<item key="common.entity_updateDate" value="updateDate" />
+	</static>
+	
+     <static name="courseStatus" >
+     	<item key="common.filter_all" value=""/>
+		<item key="crs.courseStatus_passed" value="P"/>
+		<item key="crs.courseStatus_completed" value="C"/>
+		<item key="crs.courseStatus_incomplete" value="I"/>
+		<item key="crs.courseStatus_failed" value="F"/>
+<!-- 		<item key="crs.courseStatus_browsed" value="B"/> -->
+		<item key="crs.courseStatus_notAttempted" value="N"/>
+	</static>
+	 <static name="courseStatusList" >
+     	<item key="crs.courseStatus_notAttempted" value=""/>
+		<item key="crs.courseStatus_passed" value="P"/>
+		<item key="crs.courseStatus_completed" value="C"/>
+		<item key="crs.courseStatus_incomplete" value="I"/>
+		<item key="crs.courseStatus_failed" value="F"/>
+<!-- 		<item key="crs.courseStatus_browsed" value="B"/> -->
+		<item key="crs.courseStatus_notAttempted" value="N"/>
+	</static>
+	
+	<dynamic name="contentServer" sqlId="crs.contentServerName"/>
+</dictConfig>

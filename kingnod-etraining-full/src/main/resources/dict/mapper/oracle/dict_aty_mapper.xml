@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE mapper   
+
+PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"   
+"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">  
+<mapper namespace="aty">  
+	<resultMap id="DictItemResult" type="com.kingnod.core.dict.DataDictItem"></resultMap>
+	
+	<select id="traingingPlanType" resultMap="DictItemResult" parameterType="java.util.HashMap">
+	   SELECT ID VALUE, NAME AS NAME FROM CMN_TYPE WHERE OBJECT_TYPE = 'A' AND RECORD_STATUS = 'A' AND ROOT = 0 ORDER BY SEQUENCE
+	</select>
+	
+	<select id="traingingPlanItemType" resultMap="DictItemResult" parameterType="java.util.HashMap">
+	   SELECT ID VALUE, NAME AS NAME FROM CMN_TYPE WHERE OBJECT_TYPE = 'B' AND RECORD_STATUS = 'A' AND ROOT = 0 ORDER BY SEQUENCE
+	</select>
+	
+	<select id="traingingPlanItemCostType" resultMap="DictItemResult" parameterType="java.util.HashMap">
+	   SELECT ID VALUE, NAME AS NAME FROM CMN_TYPE WHERE OBJECT_TYPE = 'C' AND RECORD_STATUS = 'A' AND ROOT = 0 ORDER BY SEQUENCE
+	</select>
+	
+	<select id="siteName" resultMap="DictItemResult" parameterType="java.util.HashMap">
+	   select ID value,NAME name from ORG_SITE
+	</select>
+	
+	<select id="parentName" resultMap="DictItemResult" parameterType="java.util.HashMap">
+	   select ID value,NAME name from ATY_FOLDER
+	</select>
+	
+	<select id="trainingPlanProcessType" resultMap="DictItemResult" parameterType="java.util.HashMap">
+	    SELECT ID VALUE, NAME AS NAME FROM CMN_TYPE WHERE OBJECT_TYPE = 'A' AND RECORD_STATUS = 'A'
+	</select>
+	
+	<select id="trainingPlanItemName" resultMap="DictItemResult" parameterType="java.util.HashMap">
+	    SELECT ID VALUE, NAME AS NAME FROM ATY_TRAINING_PLAN_ITEM WHERE  RECORD_STATUS = 'A'
+	</select>
+	
+	<select id="trainingPlanName" resultMap="DictItemResult" parameterType="java.util.HashMap">
+	    SELECT ID VALUE, NAME AS NAME FROM ATY_TRAINING_PLAN WHERE  RECORD_STATUS = 'A'
+	</select>
+	
+	<select id="processName" resultMap="DictItemResult" parameterType="java.util.HashMap">
+	    SELECT ID VALUE, NAME AS NAME FROM ATY_TRAINING_PLAN_PROCESS WHERE  RECORD_STATUS = 'A'
+	</select>
+	
+	<select id="activityId" resultMap="DictItemResult" parameterType="java.util.HashMap">
+	    SELECT ACTIVITY_ID VALUE, NAME AS NAME FROM ATY_ACTIVITY WHERE  RECORD_STATUS = 'A'
+	</select>
+	
+	<select id="pmName" resultMap="DictItemResult" parameterType="java.util.HashMap">
+	    SELECT ID VALUE, NAME AS NAME FROM ATY_FOLDER WHERE  TYPE = 'A_PF' AND ID=#{folderId}
+	</select>
+	
+	<select id="userName" resultMap="DictItemResult" parameterType="java.util.HashMap">
+	    SELECT ID VALUE, FULL_NAME AS NAME  FROM ORG_USER WHERE  ID=#{assignee}
+	</select>
+	
+	<select id="folderName" resultMap="DictItemResult" parameterType="java.util.HashMap">
+	    SELECT ID VALUE, NAME AS NAME FROM ATY_FOLDER WHERE RECORD_STATUS = 'A' AND ID=#{folderId}
+	</select>
+	
+	<select id="testGroupNames" resultMap="DictItemResult" parameterType="java.util.HashMap">
+	    select distinct tg.id value, tg.name name
+		  from exm_test_group tg, exm_question_test_group qtg, aty_examination ae
+		 where tg.id = qtg.test_group_id
+		   and ae.aty_paper_id = tg.exam_paper_id
+		   and tg.record_status='A'
+       	   and tg.question_type in ('T','A')
+		   and ae.id=#{examinationId}
+	</select>
+	
+	<select id="queryByMarkers" resultMap="DictItemResult" parameterType="java.util.HashMap">
+		select distinct ou.id value, ou.full_name name
+		  from aty_enroll_exam_worker eew, org_user ou
+		  where eew.user_id=ou.id
+		  and eew.record_status='A'
+		  and eew.work_type='M'
+		  and eew.activity_id=#{examinationId}
+	</select>
+	
+	<select id="queryByAuditors" resultMap="DictItemResult" parameterType="java.util.HashMap">
+		select distinct ou.id value, ou.full_name name
+		  from aty_enroll_exam_worker eew, org_user ou
+		  where eew.user_id=ou.id
+		  and eew.record_status='A'
+		  and eew.work_type='A'
+		  and eew.activity_id=#{examinationId}
+	</select>
+	
+</mapper> 

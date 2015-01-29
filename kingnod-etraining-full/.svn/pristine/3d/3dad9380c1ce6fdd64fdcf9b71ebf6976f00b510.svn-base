@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<dictConfig name="res">
+
+	<static name="locationFilterItems" >
+		<item key="common.filter_all" value=""/>
+		<item key="res.location_name" value="name"/>
+		<item key="res.location_status" value="remarks"/>
+		<item key="res.location_location" value="remarks"/>
+	</static>
+	
+	<static name="resourceFolderFilterItems" >
+		<item key="common.filter_all" value=""/>
+		<item key="res.resourceFolder_name" value="name"/>
+		<item key="res.resourceFolder_type" value="type"/>
+		<item key="res.resourceFolder_description" value="description"/>
+	</static>
+	
+	<static name="trainerFilterItems" >
+		<item key="common.filter_all" value=""/>
+		<item key="res.trainer_name" value="name"/>
+		<item key="res.trainer_email" value="email"/>
+	</static>
+	
+	<static name="trainerCostTypeItems" >
+		<item key="res.trainer_costType_H" value="H"/>
+		<item key="res.trainer_costType_D" value="D"/>
+		<item key="res.trainer_costType_O" value="O"/>
+	</static>
+	
+	<static name="equipmentFilterItems" >
+		<item key="common.filter_all" value=""/>
+		<item key="res.equipment_name" value="name"/>
+		<item key="res.equipment_price" value="remarks"/>
+		<item key="res.equipment_status" value="remarks"/>
+		<item key="res.equipment_buyTime" value="name"/>
+	</static>
+	
+	<static name="locationStatus" >
+		<item key="common.filter_all" value=""/>
+		<item key="res.location_do_A" value="A"/>
+		<item key="res.location_notDo_I" value="I"/>
+	</static>
+	
+	<static name="equipmentStatus" >
+		<item key="common.filter_all" value=""/>
+		<item key="res.equipment_do_A" value="A"/>
+		<item key="res.equipment_notDo_I" value="I"/>
+	</static>
+	
+	<static name="attendanceFilterItems" >
+		<item key="common.filter_all" value=""/>
+		<item key="res.attendance_name" value="name"/>
+		<item key="res.attendance_description" value="description"/>
+	</static>
+	
+	<static name="attendanceProjectFilterItems" >
+		<item key="common.filter_all" value=""/>
+		<item key="res.attendanceProject_projectName" value="projectName"/>
+	</static>
+	
+	<static name="attendanceDetailsFilterItems" >
+		<item key="common.filter_all" value=""/>
+		<item key="res.attendanceProject_projectName" value="projectName"/>
+	</static>
+	
+	<static name="attendanceDetails_statusItems" >
+		<item key="res.attendanceDetails_status_Y" value="Y"/>
+		<item key="res.attendanceDetails_status_L" value="L"/>
+		<item key="res.attendanceDetails_status_N" value="N"/>
+	</static>
+	
+	<static name="scoreSheetFilterItems" >
+		<item key="common.filter_all" value=""/>
+		<item key="res.scoreSheet_name" value="name"/>
+	</static>
+
+	<static name="learnerScoreFilterItems" >
+		<item key="common.filter_all" value=""/>
+		<item key="res.learnerScore_userName" value="userName"/>
+	</static>
+	
+	<static name="ScoreNameItems" >
+		<item key="SCORE1" value="SCORE1"/>
+		<item key="SCORE2" value="SCORE2"/>
+		<item key="SCORE3" value="SCORE3"/>
+		<item key="SCORE4" value="SCORE4"/>
+		<item key="SCORE5" value="SCORE5"/>
+		<item key="SCORE6" value="SCORE6"/>
+		<item key="SCORE7" value="SCORE7"/>
+		<item key="SCORE8" value="SCORE8"/>
+		<item key="SCORE9" value="SCORE9"/>
+		<item key="SCORE10" value="SCORE10"/>
+	</static>
+	
+	<static name="resTypeFolder">
+		<item key="res.resourceFolder_type_course" value="R_CF" />
+		<item key="res.resourceFolder_type_courseSystem" value="R_SS" />
+		<item key="res.resourceFolder_type_questions" value="R_QF" />
+		<item key="res.resourceFolder_type_examPaper" value="R_PF" />
+		<item key="res.resourceFolder_type_scoreSheet" value="R_AF" />
+		<item key="res.resourceFolder_type_equipment" value="R_EF" />
+		<item key="res.resourceFolder_type_trainer" value="R_TF" />
+		<item key="res.resourceFolder_type_knowledge" value="R_ZZ" />
+		<item key="res.resourceFolder_type_attendanceRecord" value="R_BF" />
+		<item key="res.resourceFolder_type_location" value="R_LF" />
+		<item key="res.resourceFolder_type_trainingSummary" value="D" />
+		<item key="res.resourceFolder_type_questionnaire" value="R_QF" />
+		<item key="common.select_option_empty" value="" />
+		<item key="res.resourceFolder_module_course" value="R_CM" />
+		<item key="res.resourceFolder_module_course_system" value="R_SM" />
+		<item key="res.resourceFolder_module_question" value="R_QM" />
+		<item key="res.resourcefolder_module_paper" value="R_PM" />
+		<item key="res.resourcefolder_module_score_sheet" value="R_AM" />
+		<item key="res.resourceFolder_module_equipment" value="R_EM" />
+		<item key="res.resourceFolder_module_docent" value="R_TM" />
+		<item key="res.resourceFolder_module_episteme" value="R_ZM" />
+		<item key="res.resourceFolder_module_sign_in" value="R_BM" />
+		<item key="res.resourceFolder_module_location" value="R_LM" />
+	</static>
+	
+	<static name="subObjectType_Folder">
+		<item key="common.select_option_empty" value="R_FF" />
+		<item key="res.resourceFolder_type_course" value="R_CF" />
+		<item key="res.resourceFolder_type_courseSystem" value="R_SS" />
+		<item key="res.resourceFolder_type_questions" value="R_QF" />
+		<item key="res.resourceFolder_type_examPaper" value="R_PF" />
+		<item key="res.resourceFolder_type_scoreSheet" value="R_AF" />
+		<item key="res.resourceFolder_type_equipment" value="R_EF" />
+		<item key="res.resourceFolder_type_trainer" value="R_TF" />
+		<item key="res.resourceFolder_type_knowledge" value="R_ZZ" />
+		<item key="res.resourceFolder_type_attendanceRecord" value="R_BF" />
+		<item key="res.resourceFolder_type_location" value="R_LF" />
+		<item key="res.resourceFolder_type_trainingSummary" value="D" />
+		<item key="res.resourceFolder_type_questionnaire" value="R_QF" />
+	</static>
+	
+	<static name="subObjectType_R_FF">
+		<item key="common.select_option_empty" value="R_FF" />
+		<item key="res.resourceFolder_type_knowledge" value="R_ZF" />
+		<item key="res.resourceFolder_type_course" value="R_CF" />
+		<!-- <item key="res.resourceFolder_type_courseSystemCategory" value="R_SF" /> -->
+		<!-- <item key="res.resourceFolder_type_courseSystem" value="R_SS" /> -->
+		<item key="res.resourceFolder_type_questions" value="R_QF" />
+		<item key="res.resourceFolder_type_examPaper" value="R_PF" />
+		<!-- <item key="res.resourceFolder_type_scoreSheet" value="R_AF" /> -->
+		<!-- <item key="res.resourceFolder_type_equipment" value="R_EF" /> -->
+		<!-- <item key="res.resourceFolder_type_trainer" value="R_TF" /> -->
+		<!-- <item key="res.resourceFolder_type_attendanceRecord" value="R_BF" /> -->
+		<!-- <item key="res.resourceFolder_type_location" value="R_LF" /> -->
+		<!-- <item key="res.resourceFolder_type_trainingSummary" value="D" /> -->
+		<!-- <item key="res.resourceFolder_type_questionnaire" value="R_QF" /> -->
+	</static>
+	
+	<static name="subObjectType_Module">
+		<item key="common.select_option_empty" value="" />
+		<item key="res.resourceFolder_module_knowledge" value="R_ZM" />
+		<item key="res.resourceFolder_module_course" value="R_CM" />
+		<item key="res.resourceFolder_module_course_system" value="R_SM" />
+		<item key="res.resourceFolder_module_question" value="R_QM" />
+		<item key="res.resourcefolder_module_paper" value="R_PM" />
+		<item key="res.resourcefolder_module_score_sheet" value="R_AM" />
+		<item key="res.resourceFolder_module_attendanceRecord" value="R_BM" />
+		<!-- <item key="res.resourceFolder_module_equipment" value="R_EM" /> -->
+		<!-- <item key="res.resourceFolder_module_docent" value="R_TM" /> -->
+		<!-- <item key="res.resourceFolder_module_episteme" value="R_ZM" /> -->
+		<!-- <item key="res.resourceFolder_module_sign_in" value="R_BM" /> -->
+		<!-- <item key="res.resourceFolder_module_location" value="R_LM" /> -->
+	</static>
+	
+	<static name="subObjectType_R_QM">
+		<item key="res.resourceFolder_type_questions_folder" value="R_QF" />
+	</static>
+	
+	<static name="subObjectType_R_QF">
+		<item key="res.resourceFolder_type_questions_folder" value="R_QF" />
+	</static>
+	
+	<static name="subObjectType_R_QB">
+		<item key="res.resourceFolder_type_questions" value="R_QB" />
+	</static>
+	
+	<static name="subObjectType_R_PM">
+		<item key="res.resourceFolder_type_examPaper" value="R_PF" />
+	</static>
+	
+	<static name="subObjectType_R_PF">
+		<item key="res.resourceFolder_type_examPaper" value="R_PF" />
+	</static>
+	
+	<static name="subObjectType_R_CM">
+		<item key="res.resourceFolder_type_course" value="R_CF" />
+	</static>
+	
+	<static name="subObjectType_R_CF">
+		<item key="res.resourceFolder_type_course" value="R_CF" />
+	</static>
+	
+	<static name="subObjectType_R_SM">
+		<item key="res.resourceFolder_type_courseSystemCategory" value="R_SF" />
+	</static>
+	
+	<static name="subObjectType_R_SF">
+		<item key="res.resourceFolder_type_courseSystemCategory" value="R_SF" />
+	</static>
+	
+	<!-- <static name="subObjectType_R_SC">
+		<item key="res.resourceFolder_type_courseSystemCategory_child" value="R_SC" />
+	</static>
+	
+	<static name="subObjectType_R_SY">
+		<item key="res.resourceFolder_type_courseSystemCategory_child" value="R_SY" />
+	</static> -->
+	
+	<static name="subObjectType_R_AM">
+		<item key="res.resourceFolder_type_scoreSheet" value="R_AF" />
+	</static>
+	
+	<static name="subObjectType_R_AF">
+		<item key="res.resourceFolder_type_scoreSheet" value="R_AF" />
+	</static>
+	
+	<static name="subObjectType_R_EM">
+		<item key="res.resourceFolder_type_equipment" value="R_EF" />
+	</static>
+	
+	<static name="subObjectType_R_EF">
+		<item key="res.resourceFolder_type_equipment" value="R_EF" />
+	</static>
+
+	<static name="subObjectType_R_TM">
+		<item key="res.resourceFolder_type_trainer" value="R_TF" />
+	</static>
+	
+	<static name="subObjectType_R_TF">
+		<item key="res.resourceFolder_type_trainer" value="R_TF" />
+	</static>
+
+	<static name="subObjectType_R_ZM">
+		<item key="res.resourceFolder_type_knowledge" value="R_ZF" />
+	</static>
+	
+	<static name="subObjectType_R_ZZ">
+		<item key="res.resourceFolder_type_knowledge" value="R_ZZ" />
+	</static>
+	
+	<static name="subObjectType_R_ZF">
+		<item key="res.resourceFolder_type_knowledge" value="R_ZF" />
+	</static>
+	
+	<static name="subObjectType_R_BM">
+		<item key="res.resourceFolder_type_sign_in" value="R_BF" />
+	</static>
+	
+	<static name="subObjectType_R_BF">
+		<item key="res.resourceFolder_type_sign_in" value="R_BF" />
+	</static>
+	
+	<static name="subObjectType_R_LM">
+		<item key="res.resourceFolder_type_location" value="R_LF" />
+	</static>
+	
+	<static name="subObjectType_R_LF">
+		<item key="res.resourceFolder_type_location" value="R_LF" />
+	</static>
+	
+	<dynamic name="siteName" sqlId="res.siteName" />
+	<dynamic name="parentName" sqlId="res.parentName" />
+
+</dictConfig>

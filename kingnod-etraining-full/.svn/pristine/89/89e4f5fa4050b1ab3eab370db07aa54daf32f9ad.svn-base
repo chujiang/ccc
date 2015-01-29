@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="GBK"?>
+
+<dictConfig name="cmn">
+	
+	<static name="sysParameterFilterItems" >
+		<item key="common.filter_all" value=""/>
+		<item key="cmn.sysParameter_code" value="code"/>
+		<item key="cmn.sysParameter_name" value="name"/>
+		<item key="cmn.sysParameter_value" value="value"/>
+<!-- 		<item key="cmn.sysParameter_siteName" value="siteName"/> -->
+		<item key="common.entity_updateDate" value="updateDate"/>
+	</static>
+	
+	<static name="bulletinFilterItems" >
+		<item key="common.filter_all" value=""/>
+		<item key="cmn.bulletin_title" value="title"/>
+<!-- 		<item key="cmn.bulletin_contents" value="contents"/> -->
+		<item key="cmn.bulletin_startTime" value="startTime"/>
+		<item key="cmn.bulletin_endTime" value="endTime"/>
+		<item key="common.entity_updateDate" value="updateDate"/>
+	</static>
+	<!-- 通知模板    查询项字典 -->
+	<static name="noticeConfigFilterItems" >
+		<item key="common.filter_all" value=""/>
+		<item key="cmn.noticeConfig_title" value="title"/>
+		<item key="common.entity_updateDate" value="updateDate"/>
+	</static>
+	
+	<!-- 通知    查询项字典  沿用通知模板资源-->
+	<static name="noticeFilterItems" >
+		<item key="common.filter_all" value=""/>
+		<item key="cmn.noticeConfig_title" value="title"/>
+		<item key="cmn.notice_summary" value="summary"/>
+		<item key="common.entity_updateDate" value="updateDate"/>
+	</static>
+	<!-- 用户通知    查询项字典 同上-->
+	<static name="noticeUsersFilterItems" >
+		<item key="common.filter_all" value=""/>
+		<item key="cmn.noticeConfig_title" value="title"/>
+		<item key="cmn.notice_summary" value="summary"/>
+		<item key="common.entity_updateDate" value="updateDate"/>
+	</static>
+	<!-- 通知模板    类型项字典  -->
+	<static name="noticeConfig_noticeType" >
+		<item key="common.filter_all" value=""/>
+		<item key="cmn.noticeConfig_noticeType_REG" value="SYS_REGISTER"/>
+		<item key="cmn.noticeConfig_noticeType_user_group_change" value="O_UG_CHANGE"/>
+		<item key="cmn.noticeConfig_noticeType_elearning_enroll_change" value="A_EL_CHANGE"/>
+		<item key="cmn.noticeConfig_noticeType_elearning_new_learner_notice" value="A_EL_NEW"/>
+		<item key="cmn.noticeConfig_noticeType_elearning_removed_learner_notice" value="A_EL_REMOVED"/>
+		<item key="cmn.noticeConfig_noticeType_examination_enroll_change" value="A_XN_CHANGE"/>
+		<item key="cmn.noticeConfig_noticeType_examination_new_learner_notice" value="A_XN_NEW"/>
+		<item key="cmn.noticeConfig_noticeType_examination_removed_learner_notice" value="A_XN_REMOVED"/>
+		<item key="cmn.noticeConfig_noticeType_sys_auto" value="S_AUTO"/>
+	</static>
+	<!-- 通知模板    类型项字典  分割版本-->
+	<static name="noticeType_O_OU" >
+		<item key="cmn.notice_noticeType_user_group_change" value="O_UG_CHANGE"/>
+	</static>
+	<static name="noticeType_A_EL" >
+		<item key="cmn.notice_noticeType_elearning_enroll_change" value="A_EL_CHANGE"/>
+		<item key="cmn.notice_noticeType_elearning_new_learner_notice" value="A_EL_NEW"/>
+		<item key="cmn.notice_noticeType_elearning_removed_learner_notice" value="A_EL_REMOVED"/>
+	</static>
+	<static name="noticeType_A_XN" >
+		<item key="cmn.notice_noticeType_examination_enroll_change" value="A_XN_CHANGE"/>
+		<item key="cmn.notice_noticeType_examination_new_learner_notice" value="A_XN_NEW"/>
+		<item key="cmn.notice_noticeType_examination_removed_learner_notice" value="A_XN_REMOVED"/>
+	</static>
+	<!-- 通知模板    类型项字典  分割版本 EDN-->
+	
+	<!-- 通知    状态项字典  0暂存、1发布、2撤销 -->
+	<static name="notice_status" >
+		<item key="cmn.notice_status_save" value="0"/>
+		<item key="cmn.notice_status_submit" value="1"/>
+	</static>
+	<!-- 通知    状态项字典 1发布、2撤销  用与已发布通知-->
+	<static name="notice_status_sended" >
+		<item key="cmn.notice_status_submit" value="1"/>
+		<item key="cmn.notice_status_remove" value="2"/>
+	</static>
+	<!-- 用户通知 后台   状态项字典  0已读、1未读 -->
+	<static name="noticeUsers_status" >
+		<item key="cmn.noticeUsers_status_read" value="1"/>
+		<item key="cmn.noticeUsers_status_noread" value="0"/>
+	</static>
+	<!-- 用户通知 前台   状态项字典  0已读、1未读 -->
+	<static name="noticeUsers_status_learner" >
+		<item key="cmn.noticeUsers_status_collection" value="2"/>
+		<item key="cmn.noticeUsers_status_read" value="1"/>
+		<item key="cmn.noticeUsers_status_noread" value="0"/>
+	</static>
+	<!-- 通知设置  启用  状态项字典  0未启用、1已启用 -->
+	<static name="noticeSettings_status" >
+		<item key="cmn.notice_enabled" value="1"/>
+		<item key="cmn.notice_disable" value="0"/>
+	</static>
+	<!-- 通知设置  启用  状态项字典  0未启用、1已启用 -->
+	<static name="noticeSettings_sendType" >
+		<item key="cmn.noticeSettings_sendBySystem" value="S"/>
+		<item key="cmn.noticeSettings_sendByEmail" value="E"/>
+	</static>
+	<static name="bulletinObjectType" >
+		<item key="cmn.bulletin_objectType_site" value="O_OS"/>
+		<item key="cmn.bulletin_objectType_org" value="O_OO"/>
+		<item key="cmn.bulletin_objectType_aty" value="A_FF"/>
+		<item key="cmn.bulletin_objectType_apf" value="A_PF"/>
+		<item key="cmn.bulletin_objectType_axf" value="A_XN"/>
+		<item key="cmn.bulletin_objectType_aef" value="A_EF"/>
+		<item key="cmn.bulletin_objectType_ael" value="A_EL"/>
+		<item key="cmn.bulletin_objectType_rcf" value="R_CF"/>
+	</static>
+	
+	<static name="bulletinStatus" >
+		<item key="cmn.bulletin_status_false" value="0"/>
+		<item key="cmn.bulletin_status_true" value="1"/>
+	</static>
+	
+	<static name="boolean" >
+		<item key="cmn.label_false" value="false"/>
+		<item key="cmn.label_true" value="true"/>
+	</static>
+	
+	<static name="typeFilterItems" >
+		<item key="cmn.type_trainingPlan" value="A"/>
+		<item key="cmn.type_projectPlan" value="B"/>
+		<item key="cmn.type_cost" value="C"/>
+		<item key="cmn.type_activityEvaluation" value="D"/>
+	</static>
+	
+	<static name="awardAuthorityType" >
+		<item key="sec.award_authority_user_group" value="G"/>
+		<item key="sec.award_authority_user" value="U"/>
+	</static>
+	
+	<static name="sysParameterType" >
+		<item key="cmn.sysParameter_type_boolean" value="B"/>
+		<item key="cmn.sysParameter_type_integer" value="I"/>
+		<item key="cmn.sysParameter_type_long" value="L"/>
+		<item key="cmn.sysParameter_type_datetime" value="D"/>
+		<item key="cmn.sysParameter_type_string" value="S"/>
+		<item key="cmn.sysParameter_type_collection" value="C"/>
+		<item key="cmn.sysParameter_type_simple_trigger" value="T"/>
+	</static>
+	
+	<static name="sysParameterScope" >
+		<item key="cmn.sysParameter_scope_application" value="A"/>
+		<item key="cmn.sysParameter_scope_site" value="S"/>
+	</static>
+	
+	<static name="sysRoleInheritAble" >
+		<item key="cmn.role_inheritAble_yes" value="1"/>
+		<item key="cmn.role_inheritAble_no" value="0"/>
+	</static>
+	
+	<static name="roleFilterItems" >
+		<item key="common.filter_all" value=""/>
+		<item key="cmn.role_name" value="name"/>
+		<item key="common.entity_updateDate" value="updateDate"/>
+	</static>
+	
+	<static name="numOperators" >
+		<item name=">" value="GT"/>
+		<item name="&lt;" value="LT"/>
+		<item name=">=" value="GE"/>
+		<item name="&lt;=" value="LE"/>
+		<item name="=" value="EQ"/>
+	</static>
+	
+	<dynamic name="roleName" sqlId="cmn.roleName"/>
+	<dynamic name="rootType" sqlId="cmn.rootType"/>
+</dictConfig>

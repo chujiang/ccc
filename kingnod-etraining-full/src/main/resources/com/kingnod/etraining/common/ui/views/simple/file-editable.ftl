@@ -1,0 +1,1 @@
+<@s.property value="parameters.nameValue"/><input type="hidden" value="${parameters.nameValue }"/>

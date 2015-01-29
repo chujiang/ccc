@@ -1,0 +1,2 @@
+java.util.Collection=com.kingnod.etraining.common.util.JSONStringConverter
+com.kingnod.etraining.activity.entity.Period=com.kingnod.etraining.common.util.PeriodConverter

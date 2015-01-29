@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="Security">
+	<!-- ===================================================================================== 
+		ResultMap定义
+		 ===================================================================================== -->
+	<!-- 系统权限实体对象ResultMap -->	
+	<resultMap id="AuthorityResultMap" type="com.kingnod.etraining.common.entity.Authority">
+		<id column="A_ID" property="id" jdbcType="DECIMAL" />
+		<result column="A_CODE" property="code" jdbcType="VARCHAR" />
+		<result column="A_NAME" property="name" jdbcType="VARCHAR" />
+	</resultMap>
+	
+	<!-- 系统URL-权限实体对象ResultMap -->	
+	<resultMap id="UrlAuthorityResultMap" type="com.kingnod.etraining.security.entity.UrlAuthority"> 
+		<result column="A_CODE" property="ahthority" jdbcType="VARCHAR" />
+		<result column="B_MATCH_PATTERN" property="url" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<!-- 系统用户实体对象ResultMap -->	
+	<resultMap id="UserResultMap"
+		type="com.kingnod.etraining.organization.entity.User">
+		<id column="A_ID" jdbcType="DECIMAL" property="id" />
+		<result column="A_FULL_NAME" jdbcType="VARCHAR" property="fullName" />
+		<result column="A_NICK_NAME" jdbcType="VARCHAR" property="nickName" />
+		<result column="A_LOGIN_NAME" jdbcType="VARCHAR" property="loginName" />
+		<result column="A_PASSWORD" jdbcType="VARCHAR" property="password" />
+		<result column="A_EMAIL" jdbcType="VARCHAR" property="email" />
+		<result column="A_SITE_ID" jdbcType="DECIMAL" property="siteId" />
+		<result column="A_ORGANIZATION_ID" jdbcType="DECIMAL" property="organizationId" />
+		<result column="A_MANAGER_ID" jdbcType="DECIMAL" property="managerId" />
+		<result column="A_RECORD_STATUS" jdbcType="CHAR" property="recordStatus" />
+		<result column="A_UPDATE_COUNT" jdbcType="DECIMAL" property="updateCount" />
+		<result column="A_CREATOR_ID" jdbcType="DECIMAL" property="creatorId" />
+		<result column="A_CREATE_DATE" jdbcType="TIMESTAMP" property="createDate" />
+		<result column="A_UPDATER_ID" jdbcType="DECIMAL" property="updaterId" />
+		<result column="A_UPDATE_DATE" jdbcType="TIMESTAMP" property="updateDate" />
+	</resultMap>
+	
+	<!-- 系统用户组实体对象ResultMap -->
+	<resultMap id="GrouupResultMap" type="com.kingnod.etraining.organization.entity.UserGroup">
+	    <id column="A_ID" jdbcType="DECIMAL" property="id" />
+	    <result column="A_SITE_ID" jdbcType="DECIMAL" property="siteId" />
+	    <result column="A_NAME" jdbcType="VARCHAR" property="name" />
+	    <result column="A_DESCRIPTION" jdbcType="VARCHAR" property="description" />
+	</resultMap>
+	
+	<!-- 系统角色实体对象ResultMap -->
+	<resultMap id="RoleResultMap" type="com.kingnod.etraining.common.entity.Role">
+	    <id column="A_ID" jdbcType="DECIMAL" property="id" />
+	    <result column="A_SITE_ID" jdbcType="DECIMAL" property="siteId" />
+	    <result column="A_NAME" jdbcType="VARCHAR" property="name" />
+	    <result column="A_DESCRIPTION" jdbcType="VARCHAR" property="description" />
+	</resultMap>
+
+	<!-- ===================================================================================== 
+		公用 sql 定义
+		 ===================================================================================== -->
+
+	<sql id="User_Column_List">
+	A.ID as A_ID, A.FULL_NAME as A_FULL_NAME, A.NICK_NAME as A_NICK_NAME,
+	A.LOGIN_NAME as A_LOGIN_NAME,
+	A.PASSWORD as A_PASSWORD, A.EMAIL as A_EMAIL, A.SITE_ID as A_SITE_ID,
+	A.ORGANIZATION_ID as A_ORGANIZATION_ID,
+	A.MANAGER_ID as A_MANAGER_ID, A.RECORD_STATUS as A_RECORD_STATUS, A.UPDATE_COUNT as
+	A_UPDATE_COUNT,
+	A.CREATOR_ID as A_CREATOR_ID, A.CREATE_DATE as A_CREATE_DATE, A.UPDATER_ID as
+	A_UPDATER_ID,
+	A.UPDATE_DATE as A_UPDATE_DATE 
+	</sql> 
+	
+	<!-- 
+		功能：查找某个用户拥有的权限信息(如果是超级管理员，会把所有权限全部查询出来)
+	 -->
+	<select id="findAuthorityByUser" parameterType="com.kingnod.etraining.organization.entity.User" resultMap="AuthorityResultMap">
+		 SELECT A.ID as A_ID, 
+		 		A.CODE as A_CODE
+		   FROM SYS_AUTHORITY A
+		  <if test="id != 0"> 
+		  WHERE A.ID IN (
+		  	    SELECT AUTHORITY_ID FROM SYS_AUTHORITY_REF WHERE OWNER_TYPE='R' AND OWNER_ID IN (
+		  	    	SELECT ROLE_ID FROM SYS_ROLE_REF WHERE OWNER_ID=#{id} AND OWNER_TYPE='U'
+		  	    )
+		  )
+		  </if>
+	</select>
+	
+	<!-- 
+		功能：查找某个用户拥有的角色
+		参数：#{id} 用户的ID
+	 -->
+	<select id="findRolesByUser" parameterType="com.kingnod.etraining.organization.entity.User" resultMap="RoleResultMap">
+		SELECT A.ID as A_ID, A.SITE_ID as A_SITE_ID, A.NAME as A_NAME, A.DESCRIPTION as A_DESCRIPTION
+		  FROM SYS_ROLE A
+		 WHERE ID IN (
+		 	SELECT ROLE_ID FROM SYS_ROLE_REF WHERE OWNER_ID=#{id} AND OWNER_TYPE='U'
+		 ) and RECORD_STATUS = 'A'
+	</select>
+	
+	<!-- 
+		功能：查找某个用户所属的工作组
+		参数：#{id} 用户的ID
+	 -->
+	<select id="findGroupsByUser" parameterType="com.kingnod.etraining.organization.entity.User" resultMap="GrouupResultMap">
+		SELECT A.ID as A_ID, A.SITE_ID as A_SITE_ID, A.NAME as A_NAME, A.DESCRIPTION as A_DESCRIPTION 
+		  FROM ORG_USER_GROUP A
+		 WHERE ID IN (
+		 	SELECT USER_GROUP_ID FROM ORG_USER_GROUP_USERS WHERE USER_ID=#{id} and RECORD_STATUS = 'A'
+		 ) and RECORD_STATUS = 'A'
+	</select>
+	
+	<!-- 
+		功能：根据用户名、站点信息查找用户信息
+		参数：#{siteName} 站点短名称，即站点代码
+		     #{username} 用户帐户 名称
+		     #{isAdminPlatform} 是否在管理员后台进行登录
+	 -->
+	<select id="findUserByUsername" parameterType="java.util.Map" resultMap="UserResultMap">
+		SELECT 
+		<include refid="User_Column_List" /> 
+		  FROM ORG_USER A
+		 WHERE SITE_ID = (SELECT ID FROM ORG_SITE WHERE SHORT_NAME=#{siteName} and RECORD_STATUS = 'A')
+		  AND (IFNULL(STATUS, 'A') = 'A' AND IFNULL(VALIDITY_DATE, NOW()) >= NOW()) AND IFNULL(STATUS, 'A') &lt;&gt; 'L' AND RECORD_STATUS = 'A' AND LOGIN_NAME=#{username}  
+		<if test="isAdminPlatform == true">
+		   AND ADMINISTRATOR='1'
+		</if>
+	</select>
+	
+<!-- 	<select id="findUserByUsername" parameterType="java.util.Map" resultMap="UserResultMap"> -->
+<!-- 		SELECT  -->
+<!-- 		<include refid="User_Column_List" />  -->
+<!-- 		  FROM ORG_USER A -->
+<!-- 		 WHERE SITE_ID = (SELECT ID FROM ORG_SITE WHERE SHORT_NAME=#{siteName} and RECORD_STATUS = 'A') -->
+<!-- 		  AND (NVL(STATUS, 'A') = 'A' AND NVL(VALIDITY_DATE, SYSDATE)+1 > SYSDATE) AND NVL(STATUS, 'A') &lt;&gt; 'L' AND RECORD_STATUS = 'A' AND LOGIN_NAME=#{username}   -->
+<!-- 		<if test="isAdminPlatform == true"> -->
+<!-- 		   AND ADMINISTRATOR='1' -->
+<!-- 		</if> -->
+<!-- 	</select> -->
+	
+	<!-- 
+		功能：查找所有URL-授权的信息
+	 -->
+	<select id="findAllUrlAuthority" resultType="com.kingnod.etraining.common.entity.Authority" resultMap="UrlAuthorityResultMap">
+		  SELECT A.CODE as A_CODE,
+		         B.MATCH_PATTERN as B_MATCH_PATTERN
+		    FROM SYS_AUTHORITY A , SYS_FUNCTION_AUTHORITY B
+		   WHERE A.id=B.AUTHORITY_ID
+	</select>
+
+</mapper>

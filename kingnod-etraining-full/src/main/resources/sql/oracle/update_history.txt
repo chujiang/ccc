@@ -1,0 +1,55 @@
+-- 2012.7.5 ADD BY LIUXIAOBIN
+ALTER TABLE SYS_ENTITY_READ_PERMISSION ADD ID NUMBER(18);--���������(ID)
+CREATE SEQUENCE SYS_ENTITY_READ_PERMISSION_SEQ; --�����������(ID)
+ALTER TABLE SYS_ENTITY_READ_PERMISSION ADD CONSTRAINT PK_SYS_ENTITY_READ_PERMISSION PRIMARY KEY(ID);--����IDΪ����
+
+-- 2012.7.5 ADD BY CHUJIANG
+ALTER TABLE CRS_ITEM_INFO ALTER LAUNCH VARCHAR2(500);
+
+==========================================================================================
+-- 2012.7.9 ADD BY 赖小年
+==========================================================================================
+ALTER TABLE CRS_COURSE_INFO ADD WINDOW_WIDTH NUMBER(9);
+ALTER TABLE CRS_COURSE_INFO ADD WINDOW_HEIGHT NUMBER(9); 
+COMMENT ON COLUMN CRS_COURSE_INFO.WINDOW_WIDTH IS '播放窗口宽度(像素)';
+COMMENT ON COLUMN CRS_COURSE_INFO.WINDOW_HEIGHT IS '播放窗口高度(像素)';
+
+==========================================================================================
+-- 2012.7.9 ADD BY 刘小彬
+==========================================================================================
+ALTER TABLE ATY_ENROLL_EXAM_WORKER MODIFY(WORK_TYPE CHAR(1));
+
+==========================================================================================
+-- 2012.7.10 ADD BY 赖小年
+==========================================================================================
+COMMENT ON COLUMN ATY_ENROLL_LEARNER.STAUTS IS '状态， R：注册， O：注销，N未注册';
+
+==========================================================================================
+-- 2012.7.12 ADD BY 刘小彬
+==========================================================================================
+ALTER TABLE ATY_ACTIVITY MODIFY(OBJECT_DETAILS CLOB);
+
+
+==========================================================================================
+--2012.7.18 ADD BY 皮敬伟    
+==========================================================================================
+ALTER TABLE ORG_USER_PROPERTIES ADD SEQ NUMBER(18);
+COMMENT ON COLUMN ORG_USER_PROPERTIES.SEQ IS '顺序，可以根据该字段来进行升序降序的排列';
+
+
+==========================================================================================
+--2012.7.18 add by 刘小彬
+==========================================================================================
+ALTER TABLE ORG_SITE MODIFY(DESCRIPTION NVARCHAR(150));
+
+
+==========================================================================================
+--2012.7.19 add by 黄海斌
+==========================================================================================
+--oracle
+ALTER TABLE ATY_ENROLL_LEARNER_FILTER ADD ACTIVITY_TYPE CHAR(4) default '';
+
+--mysql
+ALTER TABLE ATY_ENROLL_LEARNER_FILTER ADD ACTIVITY_TYPE CHAR(4) default '';
+
+

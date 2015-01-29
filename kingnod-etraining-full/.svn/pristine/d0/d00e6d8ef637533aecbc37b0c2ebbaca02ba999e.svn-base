@@ -1,0 +1,1 @@
+<#include "/com/kingnod/etraining/common/ui/views/simple/PlayerButton.ftl" />

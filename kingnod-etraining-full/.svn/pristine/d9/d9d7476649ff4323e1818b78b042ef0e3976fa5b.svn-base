@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper   
+
+PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"   
+"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">  
+<mapper namespace="cmn">  
+	<resultMap id="DictItemResult" type="com.kingnod.core.dict.DataDictItem"></resultMap>
+		<select id="roleName"  resultMap="DictItemResult" parameterType="java.util.HashMap">
+			select id value,NAME name  from SYS_ROLE
+		</select>
+		<select id="rootType"  resultMap="DictItemResult" parameterType="java.util.HashMap">
+			select id value,NAME name  from CMN_TYPE where ROOT = '1' AND RECORD_STATUS = 'A' order by SEQUENCE asc
+		</select>
+</mapper>

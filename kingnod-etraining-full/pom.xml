@@ -1,0 +1,390 @@
+﻿<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>kingnod-etraining-parent</artifactId>
+		<groupId>com.kingnod.etraining</groupId>
+		<version>1.1-RELEASE</version>
+	</parent>
+	<groupId>com.kingnod.etraining</groupId>
+	<artifactId>kingnod-etraining-full</artifactId>
+	<name>Kingnod E-Training's Full Module</name>
+	<dependencies>
+		<!-- Common Module -->
+		<dependency>
+			<groupId>org.apache.struts</groupId>
+			<artifactId>struts2-config-browser-plugin</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.struts</groupId>
+			<artifactId>struts2-json-plugin</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>net.sf.json-lib</groupId>
+			<artifactId>json-lib</artifactId>
+			<classifier>jdk15</classifier>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-digester3</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jsp-api</artifactId>
+		</dependency>
+		<!-- Course Module -->
+		<dependency>
+			<groupId>org.directwebremoting</groupId>
+			<artifactId>dwr</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>xerces</groupId>
+			<artifactId>xercesImpl</artifactId>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>org.jdom</groupId>
+			<artifactId>jdom</artifactId>
+		</dependency>
+		<!-- Security Module -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-acl</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-taglibs</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjrt</artifactId>
+		</dependency>
+		<!-- Workflow Module -->
+		<dependency>
+			<groupId>org.activiti</groupId>
+			<artifactId>activiti-engine</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.activiti</groupId>
+			<artifactId>activiti-spring</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.groovy</groupId>
+			<artifactId>groovy</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.kingnod</groupId>
+			<artifactId>kingnod-core</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.openjpa</groupId>
+			<artifactId>openjpa-persistence</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-net</groupId>
+			<artifactId>commons-net</artifactId>
+		</dependency>
+		<dependency>
+			<artifactId>htmlparser</artifactId>
+			<groupId>org.htmlparser</groupId>
+			<version>1.6</version>
+		</dependency>
+		<dependency>
+			<artifactId>htmllexer</artifactId>
+			<groupId>org.htmlparser</groupId>
+			<version>1.6</version>
+		</dependency>
+		<dependency>
+			<groupId>org.quartz-scheduler</groupId>
+			<artifactId>quartz</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.xhtmlrenderer</groupId>
+			<artifactId>core-renderer</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.xfire</groupId>
+			<artifactId>xfire-all</artifactId>
+			<version>1.2.6</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.codehaus.xfire</groupId>
+					<artifactId>xfire-spring</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<!-- dependency for report export -->
+		<dependency>
+			<groupId>com.oracle</groupId>
+			<artifactId>xdo-core</artifactId>
+			<version>1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.oracle</groupId>
+			<artifactId>xmlparser</artifactId>
+			<version>2.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.oracle</groupId>
+			<artifactId>i18nAPI</artifactId>
+			<version>v3</version>
+		</dependency>
+		<dependency>
+			<groupId>com.oracle</groupId>
+			<artifactId>versioninfo</artifactId>
+			<version>1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.oracle</groupId>
+			<artifactId>collections</artifactId>
+			<version>1.0</version>
+		</dependency>
+		<!-- dependency for license -->
+		<dependency>
+			<groupId>bouncycastle</groupId>
+			<artifactId>bcpg-jdk15</artifactId>
+			<version>143</version>
+		</dependency>
+		<dependency>
+			<groupId>bouncycastle</groupId>
+			<artifactId>bcprov-jdk15</artifactId>
+			<version>143</version>
+		</dependency>
+		<dependency>
+			<groupId>net.sf.jxls</groupId>
+			<artifactId>jxls-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>net.sf.jxls</groupId>
+			<artifactId>jxls-reader</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>jxl</groupId>
+			<artifactId>jexcelapi</artifactId>
+			<version>2.6.12</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<finalName>kingnod-etraining-full</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<version>2.8</version>
+				<configuration>
+					<wtpversion>2.0</wtpversion>
+					<wtpContextName>learner-web</wtpContextName>
+					<downloadSources>true</downloadSources>
+					<downloadJavadocs>true</downloadJavadocs>
+					<additionalProjectFacets>
+						<jst.web>2.4</jst.web>
+						<jst.java>5.0</jst.java>
+					</additionalProjectFacets>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>native2ascii-maven-plugin</artifactId>
+				<version>1.0-beta-1</version>
+				<configuration>
+					<encoding>UTF-8</encoding>
+					<includes>
+						<include>i18n/**_message*.properties</include>
+						<include>i18n/**_error*.properties</include>
+					</includes>
+					<workDir>target/classes</workDir>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>native2ascii</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<version>1.7</version>
+				<executions>
+					<execution>
+						<phase>compile</phase>
+						<configuration>
+							<target name="dasho">
+								<java fork="true" classname="DashOPro" classpath="F:/software/Java-security/DashOEval 6.10/DashOPro.jar">
+									<arg value="-v" />
+									<arg file="project.dox" />
+								</java>
+								<copy todir="target/classes" force="true">
+    								<fileset dir="target/classes1" includes="**/*.class"/>
+								</copy>
+							</target>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+						<plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>dbunit-maven-plugin</artifactId>
+                <version>1.0-beta-3</version>
+                <configuration>
+                	<!-- mysql  -->
+<!--                 	<driver>com.mysql.jdbc.Driver</driver> -->
+<!--                     <url>jdbc:mysql://localhost:3306/etraining</url> -->
+<!--                     <username>etraining</username> -->
+<!--                     <password>password</password> -->
+<!--                     <schema>etraining</schema> -->
+<!--                     <dataTypeFactoryName>org.dbunit.ext.mysql.MySqlDataTypeFactory</dataTypeFactoryName> -->
+<!--                     <metadataHandlerName>org.dbunit.ext.mysql.MySqlMetadataHandler</metadataHandlerName> -->
+                    
+                    <!-- oracle -->
+                    <driver>oracle.jdbc.driver.OracleDriver</driver>
+                    <url>jdbc:oracle:thin:@192.16.8.254:1521:OIL5DB</url>
+                    <username>ket_a1</username>
+                    <password>password</password>
+                    <schema>ket_a1</schema>
+                    <dataTypeFactoryName>org.dbunit.ext.oracle.Oracle10DataTypeFactory</dataTypeFactoryName>
+                    <!-- sql server -->
+<!--                     <dataTypeFactoryName>org.dbunit.ext.mssql.MsSQLDataTypeFactory</dataTypeFactoryName> -->
+                    <encoding>utf-8</encoding>
+                    <useQualifiedTableNames>false</useQualifiedTableNames>
+                    
+                    <dest>src/main/resources/sql/oracle/data.xml</dest>
+                    <src>src/main/resources/sql/oracle/data.xml</src><!--compare 和 operation 要用到它 -->
+                    <queries>
+                        <query>
+                    		<name>ATY_FOLDER</name>
+                    		<sql><![CDATA[select ID,NAME,TYPE,DESCRIPTION,SITE_ID,PARENT_ID,RECORD_STATUS,UPDATE_COUNT,CREATOR_ID,CREATE_DATE,UPDATER_ID,UPDATE_DATE,LEVEL_NUMBER,0 AS OBJECT_COUNT,0 AS FOLDER_COUNT from ATY_FOLDER where id < 0]]></sql>
+                    	</query>
+                        <query>
+                    		<name>ATY_FOLDER_HIERARCHY</name>
+                    		<sql><![CDATA[select * from ATY_FOLDER_HIERARCHY where id < 0]]></sql>
+                    	</query>
+                        <query>
+                    		<name>CMN_TYPE</name>
+                    		<sql><![CDATA[select * from CMN_TYPE where id < 0]]></sql>
+                    	</query>
+                        <query>
+                    		<name>ORG_SITE</name>
+                    		<sql><![CDATA[select * from ORG_SITE t where id < 0]]></sql>
+                    	</query>
+                        <query>
+                    		<name>ORG_SITE_HIERARCHY</name>
+                    		<sql><![CDATA[select * from ORG_SITE_HIERARCHY t where id < 0]]></sql>
+                    	</query>
+                        <query>
+                    		<name>ORG_ORGANIZATION</name>
+                    		<sql><![CDATA[select ID,PARENT_ID,NAME,SHORT_NAME,DESCRIPTION,SITE_ID,MANAGER_ID,RECORD_STATUS,UPDATE_COUNT,CREATOR_ID,CREATE_DATE,UPDATER_ID,UPDATE_DATE,LEVEL_NUMBER,0 AS ORGANIZATION_COUNT,0 AS OBJECT_COUNT,TYPE from ORG_ORGANIZATION where id < 0]]></sql>
+                    	</query>
+                        <query>
+                    		<name>ORG_ORGANIZATION_HIERARCHY</name>
+                    		<sql><![CDATA[select * from ORG_ORGANIZATION_HIERARCHY where id < 0]]></sql>
+                    	</query>
+                        <query>
+                    		<name>ORG_USER</name>
+                    		<sql><![CDATA[select * from ORG_USER where id < 0]]></sql>
+                    	</query>
+                        <query>
+                    		<name>RES_FOLDER</name>
+                    		<sql><![CDATA[select ID,NAME,TYPE,DESCRIPTION,SITE_ID,PARENT_ID,RECORD_STATUS,UPDATE_COUNT,CREATOR_ID,CREATE_DATE,UPDATER_ID,UPDATE_DATE,LEVEL_NUMBER,0 AS OBJECT_COUNT,0 AS FOLDER_COUNT from RES_FOLDER where id < 0]]></sql>
+                    	</query>
+                        <query>
+                    		<name>RES_FOLDER_HIERARCHY</name>
+                    		<sql><![CDATA[select * from RES_FOLDER_HIERARCHY where id < 0]]></sql>
+                    	</query>
+                        <query>
+                    		<name>RPT_FOLDER</name>
+                    		<sql><![CDATA[select * from RPT_FOLDER where id < 0]]></sql>
+                    	</query>
+                        <query>
+                    		<name>RPT_FOLDER_HIERARCHY</name>
+                    		<sql><![CDATA[select * from RPT_FOLDER_HIERARCHY where id < 0]]></sql>
+                    	</query>
+                        <query>
+                    		<name>SYS_ENTITY_AUTHORITY</name>
+                    		<sql><![CDATA[select * from SYS_ENTITY_AUTHORITY]]></sql>
+                    	</query>
+                        <query>
+                    		<name>SYS_ENTITY_PERMISSION</name>
+                    		<sql><![CDATA[select * from SYS_ENTITY_PERMISSION where entity_id < 0 and owner_type = 'U' and owner_id = -1]]></sql>
+                    	</query>
+                        <query>
+                    		<name>SYS_ENTITY_READ_PERMISSION</name>
+                    		<sql><![CDATA[select * from SYS_ENTITY_READ_PERMISSION where ENTITY_ID = -1 and (ENTITY_TYPE = 'O_OS' or ENTITY_TYPE = 'R_OS' or ENTITY_TYPE = 'A_OS' or ENTITY_TYPE = 'P_OS') and USER_ID = -1]]></sql>
+                    	</query>
+                        <query>
+                    		<name>SYS_FUNCTION</name>
+                    		<sql><![CDATA[select * from SYS_FUNCTION]]></sql>
+                    	</query>
+                        <query>
+                    		<name>SYS_MENU</name>
+                    		<sql><![CDATA[select * from SYS_MENU]]></sql>
+                    	</query>
+                        <query>
+                    		<name>SYS_NOTICE_CONFIG</name>
+                    		<sql><![CDATA[select * from SYS_NOTICE_CONFIG where id < 0]]></sql>
+                    	</query>
+                    	<query>
+                    		<name>SYS_PARAMETER</name>
+                    		<sql><![CDATA[select * from SYS_PARAMETER where id < 0]]></sql>
+                    	</query>
+                    	<query>
+                    		<name>SYS_BIT_MAPPING</name>
+                    		<sql><![CDATA[select MAPPING_TYPE,SERIAL_NUMBER,BIT_VALUE,INT_VALUE,null AS OBJECT_ID from SYS_BIT_MAPPING]]></sql>
+                    	</query>
+                    	<query>
+                    		<name>SYS_ENTITY_PERM_HIERARCHY</name>
+                    		<sql><![CDATA[select * from SYS_ENTITY_PERM_HIERARCHY]]></sql>
+                    	</query>
+                    </queries>
+                    <type>REFRESH</type><!--operation 要用到它-->
+                </configuration>
+                <dependencies>
+				<dependency>
+					<!-- mysql driver -->
+<!-- 					<groupId>mysql</groupId> -->
+<!-- 					<artifactId>mysql-connector-java</artifactId> -->
+<!-- 					<version>5.1.20</version> -->
+					
+					<!-- h2 driver -->
+<!-- 					<groupId>com.h2database</groupId> -->
+<!-- 					<artifactId>h2</artifactId> -->
+<!-- 					<version>1.2.140</version> -->
+					
+					<!-- sqlserver driver --> 
+					
+					<!-- oracle driver -->
+					<groupId>com.oracle</groupId>
+					<artifactId>ojdbc14</artifactId>
+					<version>10.2.0.3.0</version>
+				</dependency>
+                </dependencies>
+            </plugin>
+		</plugins>
+	</build>
+</project>

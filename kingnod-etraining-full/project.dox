@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<dasho version="6.10.3">
+    <propertylist/>
+    <global>
+        <option>IGNORENOTFOUNDCLASSES</option>
+        <option>FORNAMEDETECTION</option>
+        <option>FORCE</option>
+    </global>
+    <inputpath>
+        <pathelement location="target\classes"/>
+    </inputpath>
+    <classpath>
+        <pathelement location="D:\Program Files\apache-tomcat-6.0.33\lib\jsp-api.jar"/>
+        <pathelement location="D:\Program Files\apache-tomcat-6.0.33\lib\servlet-api.jar"/>
+        <pathelement location="F:\software\maven2\repository\org\springframework\spring-test\3.0.3.RELEASE\spring-test-3.0.3.RELEASE.jar"/>
+        <pathelement location="..\lib\activation-1.1.jar"/>
+        <pathelement location="..\lib\activiti-engine-5.8.jar"/>
+        <pathelement location="..\lib\activiti-spring-5.8.jar"/>
+        <pathelement location="..\lib\ant-1.6.5.jar"/>
+        <pathelement location="..\lib\antlr-2.7.7.jar"/>
+        <pathelement location="..\lib\aopalliance-1.0.jar"/>
+        <pathelement location="..\lib\asm-3.2.jar"/>
+        <pathelement location="..\lib\asm-analysis-3.2.jar"/>
+        <pathelement location="..\lib\asm-commons-3.2.jar"/>
+        <pathelement location="..\lib\asm-tree-3.2.jar"/>
+        <pathelement location="..\lib\asm-util-3.2.jar"/>
+        <pathelement location="..\lib\aspectjrt-1.6.9.jar"/>
+        <pathelement location="..\lib\aspectjweaver-1.6.9.jar"/>
+        <pathelement location="..\lib\bcmail-jdk14-138.jar"/>
+        <pathelement location="..\lib\bcpg-jdk15-143.jar"/>
+        <pathelement location="..\lib\bcprov-jdk14-138.jar"/>
+        <pathelement location="..\lib\bcprov-jdk15-143.jar"/>
+        <pathelement location="..\lib\collections-1.0.jar"/>
+        <pathelement location="..\lib\commons-attributes-api-2.1.jar"/>
+        <pathelement location="..\lib\commons-beanutils-1.8.3.jar"/>
+        <pathelement location="..\lib\commons-codec-1.4.jar"/>
+        <pathelement location="..\lib\commons-collections-3.2.1.jar"/>
+        <pathelement location="..\lib\commons-dbcp-1.3.jar"/>
+        <pathelement location="..\lib\commons-digester-1.8.jar"/>
+        <pathelement location="..\lib\commons-digester3-3.0.jar"/>
+        <pathelement location="..\lib\commons-discovery-0.2.jar"/>
+        <pathelement location="..\lib\commons-email-1.2.jar"/>
+        <pathelement location="..\lib\commons-fileupload-1.2.1.jar"/>
+        <pathelement location="..\lib\commons-httpclient-3.0.jar"/>
+        <pathelement location="..\lib\commons-io-1.3.2.jar"/>
+        <pathelement location="..\lib\commons-jexl-1.1.jar"/>
+        <pathelement location="..\lib\commons-lang-2.5.jar"/>
+        <pathelement location="..\lib\commons-logging-1.1.1.jar"/>
+        <pathelement location="..\lib\commons-net-3.0.1.jar"/>
+        <pathelement location="..\lib\commons-pool-1.5.4.jar"/>
+        <pathelement location="..\lib\configdebug-1.1.jar"/>
+        <pathelement location="..\lib\core-renderer-R8.jar"/>
+        <pathelement location="..\lib\dwr-2.0.8.jar"/>
+        <pathelement location="..\lib\ehcache-1.6.2.jar"/>
+        <pathelement location="..\lib\ezmorph-1.0.6.jar"/>
+        <pathelement location="..\lib\freemarker-2.3.15.jar"/>
+        <pathelement location="..\lib\geronimo-jms_1.1_spec-1.0.1.jar"/>
+        <pathelement location="..\lib\geronimo-jpa_3.0_spec-1.0.jar"/>
+        <pathelement location="..\lib\geronimo-jta_1.1_spec-1.1.jar"/>
+        <pathelement location="..\lib\groovy-1.7.5.jar"/>
+        <pathelement location="..\lib\htmllexer-1.6.jar"/>
+        <pathelement location="..\lib\htmlparser-1.6.jar"/>
+        <pathelement location="..\lib\httpclient-4.1.3.jar"/>
+        <pathelement location="..\lib\httpcore-4.1.4.jar"/>
+        <pathelement location="..\lib\i18nAPI-v3.jar"/>
+        <pathelement location="..\lib\ibatis-sqlmap-2.3.0.jar"/>
+        <pathelement location="..\lib\itext-2.0.8.jar"/>
+        <pathelement location="..\lib\jackson-core-asl-1.5.5.jar"/>
+        <pathelement location="..\lib\jackson-mapper-asl-1.5.5.jar"/>
+        <pathelement location="..\lib\jaxb-api-2.0.jar"/>
+        <pathelement location="..\lib\jaxb-impl-2.0.1.jar"/>
+        <pathelement location="..\lib\jaxb-xjc-2.0.1.jar"/>
+        <pathelement location="..\lib\jaxen-1.1-beta-9.jar"/>
+        <pathelement location="..\lib\jaxws-api-2.0.jar"/>
+        <pathelement location="..\lib\jdom-1.0.jar"/>
+        <pathelement location="..\lib\jdom-1.1.2.jar"/>
+        <pathelement location="..\lib\jexcelapi-2.6.12.jar"/>
+        <pathelement location="..\lib\jmock-1.0.1.jar"/>
+        <pathelement location="..\lib\json-lib-2.3-jdk15.jar"/>
+        <pathelement location="..\lib\jsr173_api-1.0.jar"/>
+        <pathelement location="..\lib\jstl-1.1.2.jar"/>
+        <pathelement location="..\lib\jxls-core-0.9.6.jar"/>
+        <pathelement location="..\lib\jxls-reader-0.9.6.jar"/>
+        <pathelement location="..\lib\kingnod-core-1.1-RELEASE.jar"/>
+        <pathelement location="..\lib\livetribe-jsr223-2.0.6.jar"/>
+        <pathelement location="..\lib\log4j-1.2.16.jar"/>
+        <pathelement location="..\lib\mail-1.4.1.jar"/>
+        <pathelement location="..\lib\mybatis-3.0.6.jar"/>
+        <pathelement location="..\lib\mybatis-spring-1.0.2.jar"/>
+        <pathelement location="..\lib\mysql-connector-java-5.1.18.jar"/>
+        <pathelement location="..\lib\ognl-2.7.3.jar"/>
+        <pathelement location="..\lib\ojdbc14-10.2.0.3.0.jar"/>
+        <pathelement location="..\lib\openjpa-kernel-1.2.2.jar"/>
+        <pathelement location="..\lib\openjpa-lib-1.2.2.jar"/>
+        <pathelement location="..\lib\openjpa-persistence-1.2.2.jar"/>
+        <pathelement location="..\lib\opensaml-1.0.1.jar"/>
+        <pathelement location="..\lib\poi-3.0.2-FINAL.jar"/>
+        <pathelement location="..\lib\qdox-1.5.jar"/>
+        <pathelement location="..\lib\quartz-1.8.6.jar"/>
+        <pathelement location="..\lib\saaj-api-1.3.jar"/>
+        <pathelement location="..\lib\saaj-impl-1.3.jar"/>
+        <pathelement location="..\lib\serp-1.13.1.jar"/>
+        <pathelement location="..\lib\sitemesh-2.4.2.jar"/>
+        <pathelement location="..\lib\slf4j-api-1.6.1.jar"/>
+        <pathelement location="..\lib\slf4j-log4j12-1.6.1.jar"/>
+        <pathelement location="..\lib\spring-aop-3.0.3.RELEASE.jar"/>
+        <pathelement location="..\lib\spring-asm-3.0.3.RELEASE.jar"/>
+        <pathelement location="..\lib\spring-beans-3.0.3.RELEASE.jar"/>
+        <pathelement location="..\lib\spring-context-3.0.3.RELEASE.jar"/>
+        <pathelement location="..\lib\spring-context-support-3.0.3.RELEASE.jar"/>
+        <pathelement location="..\lib\spring-core-3.0.3.RELEASE.jar"/>
+        <pathelement location="..\lib\spring-expression-3.0.3.RELEASE.jar"/>
+        <pathelement location="..\lib\spring-jdbc-3.0.3.RELEASE.jar"/>
+        <pathelement location="..\lib\spring-orm-3.0.3.RELEASE.jar"/>
+        <pathelement location="..\lib\spring-security-acl-3.0.3.RELEASE.jar"/>
+        <pathelement location="..\lib\spring-security-config-3.0.3.RELEASE.jar"/>
+        <pathelement location="..\lib\spring-security-core-3.0.3.RELEASE.jar"/>
+        <pathelement location="..\lib\spring-security-taglibs-3.0.3.RELEASE.jar"/>
+        <pathelement location="..\lib\spring-security-web-3.0.3.RELEASE.jar"/>
+        <pathelement location="..\lib\spring-tx-3.0.3.RELEASE.jar"/>
+        <pathelement location="..\lib\spring-web-3.0.3.RELEASE.jar"/>
+        <pathelement location="..\lib\standard-1.1.2.jar"/>
+        <pathelement location="..\lib\stax-api-1.0.1.jar"/>
+        <pathelement location="..\lib\stax-utils-20040917.jar"/>
+        <pathelement location="..\lib\struts2-config-browser-plugin-2.1.8.1.jar"/>
+        <pathelement location="..\lib\struts2-convention-plugin-2.1.8.1.jar"/>
+        <pathelement location="..\lib\struts2-core-2.1.8.1.jar"/>
+        <pathelement location="..\lib\struts2-json-plugin-2.1.8.1.jar"/>
+        <pathelement location="..\lib\struts2-sitemesh-plugin-2.1.8.1.jar"/>
+        <pathelement location="..\lib\struts2-spring-plugin-2.1.8.1.jar"/>
+        <pathelement location="..\lib\versioninfo-1.0.jar"/>
+        <pathelement location="..\lib\wsdl4j-1.6.1.jar"/>
+        <pathelement location="..\lib\wss4j-1.5.1.jar"/>
+        <pathelement location="..\lib\wstx-asl-3.2.0.jar"/>
+        <pathelement location="..\lib\xbean-2.2.0.jar"/>
+        <pathelement location="..\lib\xbean-spring-2.8.jar"/>
+        <pathelement location="..\lib\xdo-core-1.0.jar"/>
+        <pathelement location="..\lib\xercesImpl-2.9.1.jar"/>
+        <pathelement location="..\lib\xfire-aegis-1.2.6.jar"/>
+        <pathelement location="..\lib\xfire-all-1.2.6.jar"/>
+        <pathelement location="..\lib\xfire-annotations-1.2.6.jar"/>
+        <pathelement location="..\lib\xfire-core-1.2.6.jar"/>
+        <pathelement location="..\lib\xfire-generator-1.2.6.jar"/>
+        <pathelement location="..\lib\xfire-java5-1.2.6.jar"/>
+        <pathelement location="..\lib\xfire-jaxb2-1.2.6.jar"/>
+        <pathelement location="..\lib\xfire-jaxws-1.2.6.jar"/>
+        <pathelement location="..\lib\xfire-jsr181-api-1.0-M1.jar"/>
+        <pathelement location="..\lib\xfire-ws-security-1.2.6.jar"/>
+        <pathelement location="..\lib\xfire-xmlbeans-1.2.6.jar"/>
+        <pathelement location="..\lib\xml-apis-1.0.b2.jar"/>
+        <pathelement location="..\lib\xmlparser-2.0.jar"/>
+        <pathelement location="..\lib\xmlParserAPIs-2.6.2.jar"/>
+        <pathelement location="..\lib\XmlSchema-1.1.jar"/>
+        <pathelement location="..\lib\xmlsec-1.3.0.jar"/>
+        <pathelement location="..\lib\xwork-core-2.1.6.jar"/>
+    </classpath>
+    <report path="${dasho.project}-report.txt"/>
+    <output autocopy="false">
+        <dir path="target\classes1"/>
+    </output>
+    <removal classes="unused" members="unused-non-public">
+        <debug/>
+        <attributes/>
+    </removal>
+    <renaming option="off">
+        <mapping>
+            <mapreport path="${dasho.project}-mapreport.txt"/>
+            <mapoutput overwrite="true" path="${dasho.project}.map"/>
+        </mapping>
+    </renaming>
+    <optimization option="on"/>
+    <controlflow option="on"/>
+    <stringencrypt implementations="3" level="8" option="on">
+        <seOutput path="${dasho.project}-se.map"/>
+    </stringencrypt>
+</dasho>
+

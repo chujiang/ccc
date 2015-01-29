@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE mapper   
+
+PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"   
+"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">  
+<mapper namespace="org">  
+	<resultMap id="DictItemResult" type="com.kingnod.core.dict.DataDictItem"></resultMap>
+	<select id="userFullName" resultMap="DictItemResult" parameterType="java.util.HashMap">
+		select ID value, FULL_NAME name from ORG_USER
+	</select>
+	
+	<select id="siteName" resultMap="DictItemResult" parameterType="java.util.HashMap">
+	   select ID value,NAME name from ORG_SITE
+	</select>
+	
+	<select id="getSiteNameById" resultMap="DictItemResult" parameterType="java.util.HashMap">
+	   select NAME name from ORG_SITE where ID=#{id}
+	</select>
+	
+	<select id="orgName" resultMap="DictItemResult" parameterType="java.util.HashMap">
+	   select ID value,NAME name from ORG_ORGANIZATION
+	</select>
+	
+	<select id="organizationName" resultMap="DictItemResult" parameterType="java.util.HashMap">
+	   select ID value,NAME name from ORG_ORGANIZATION
+	</select>
+	
+	<select id="orgUserProperty" resultMap="DictItemResult" parameterType="java.util.HashMap">
+	   select ID VALUE, NAME NAME from org_user_properties WHERE RECORD_STATUS='A' AND SITE_ID=#{siteId} order by seq asc
+	</select>
+	
+	<select id="getUserBySite" resultMap="DictItemResult" parameterType="java.util.HashMap">
+	   select ID VALUE, FULL_NAME NAME from org_user WHERE SITE_ID=#{siteId}
+	</select>
+	
+	<select id="userGroupFilterName" resultMap="DictItemResult" parameterType="java.util.HashMap">
+	   select TO_CHAR(ID) value,NAME name from ORG_USER_PROPERTIES 
+	     union
+	     select 'O_OU','用户' from dual
+	     union
+	     select 'O_OG','用户组' from dual
+	     union
+	     select 'O_OS','站点' from dual
+	     union
+	     select 'O_OO','组织' from dual
+	     union
+	     select 'O_OR','角色' from dual
+	</select>
+	
+	<select id="propertyName" resultMap="DictItemResult" parameterType="java.util.HashMap">
+	   select ID value,NAME name from ORG_USER_PROPERTIES
+	</select>
+	
+	<select id="propertyOption" resultMap="DictItemResult" parameterType="java.util.HashMap">
+	   select ID value,NAME name from ORG_USER_PROPERTY_OPTION WHERE RECORD_STATUS='A' AND PROPERTY_ID=#{propertyId}
+	</select>
+	
+	<select id="getFullNameById" resultMap="DictItemResult" parameterType="java.util.HashMap">
+	   select ID value,FULL_NAME name from ORG_USER WHERE ID=#{userId}
+	</select>
+	
+</mapper> 

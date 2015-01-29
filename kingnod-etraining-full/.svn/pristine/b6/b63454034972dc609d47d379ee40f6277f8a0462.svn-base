@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="GBK"?>
+
+<dictConfig name="aty">
+
+	<static name="activityFolderFilterItems" >
+		<item key="common.filter_all" value=""/>
+		<item key="aty.activityFolder_name" value="name"/>
+		<item key="aty.activityFolder_type" value="type"/>
+		<item key="aty.activityFolder_description" value="description"/>
+	</static>
+	
+	<static name="trainingPlanFilterItems" >
+		<item key="common.filter_all" value=""/>
+		<item key="aty.trainingPlan_name" value="name"/>
+		<item key="aty.trainingPlan_type" value="type"/>
+		<item key="aty.trainingPlan_description" value="description"/>
+	</static>
+	
+	<!-- 考试状态   对应字段    aty.examination_publishStatus -->
+	<static name="publishStatusItems">
+		<item key="aty.publishStatus_P" value="P"/>
+		<item key="aty.publishStatus_C" value="C"/>
+		<item key="aty.publishStatus_R" value="R"/>
+	</static>
+	
+	<static name="numberCompare">
+		<item key="rpt.numberCompare_Greater_than" value="1"/>
+		<item key="rpt.numberCompare_equal_to" value="0"/>
+		<item key="rpt.numberCompare_less_than" value="-1"/>
+	</static>
+	
+	<static name="trainingPlanItemFilterItems" >
+		<item key="common.filter_all" value=""/>
+		<item key="aty.trainingPlanItem_name" value="name"/>
+		<item key="aty.trainingPlanItem_type" value="type"/>
+		<item key="aty.trainingPlanItem_object" value="object"/>
+		<item key="aty.trainingPlanItem_responser" value="responser"/>
+		<item key="aty.trainingPlanItem_learnerNumber" value="learnerNumber"/>
+		<item key="aty.trainingPlanItem_lessons" value="learnerNumber"/>
+	</static>
+	
+	<static name="trainingPlanItemCostFilterItems" >
+		<item key="common.filter_all" value=""/>
+		<item key="aty.trainingPlanItemCost_name" value="name"/>
+		<item key="aty.trainingPlanItemCost_type" value="type"/>
+	</static>
+	
+	<static name="trainingPlanActivityFilterItems" >
+		<item key="common.filter_all" value=""/>
+		<item key="aty.trainingPlanActivity_processName" value="processName"/>
+		<item key="aty.trainingPlanActivity_activityName" value="activityName"/>
+	</static>
+	
+	<static name="trainingPlanStatus" >
+		<item key="common.filter_all" value=""/>
+		<item key="aty.trainingPlan_status_pending" value="P"/>
+		<item key="aty.trainingPlan_status_checking" value="C"/>
+		<item key="aty.trainingPlan_status_release" value="R"/>
+	</static>
+	
+	<static name="trainingPlanItemStatus" >
+		<item key="common.filter_all" value=""/>
+		<item key="aty.trainingPlanItem_status_running" value="R"/>
+		<item key="aty.trainingPlanItem_status_end" value="E"/>
+	</static>
+	
+	<static name="trainingPlanProcessFilterItems" >
+		<item key="common.filter_all" value=""/>
+		<item key="aty.trainingPlanProcess_name" value="name"/>
+		<item key="aty.trainingPlanProcess_predictCost" value="predictCost"/>
+	</static>
+	
+	<static name="elearningFilterItems" >
+		<item key="common.filter_all" value=""/>
+		<item key="aty.elearning_elearningName" value="name"/>
+		<item key="aty.elearning_courseName" value="courseName"/>
+		<item key="common.entity_updateDate" value="updateDate"/>
+	</static>
+	
+	<static name="elearningSituation" >
+		<item key="common.filter_all" value=""/>
+		<item key="org.userGroupUsers_fullName" value="fullName"/>
+		<item key="org.userGroupUsers_loginName" value="loginName"/>
+		<item key="org.organization_name" value="eName"/>
+		<item key="aty.userActivity_score" value="score"/>
+		<item key="aty.userActivity_totalTime" value="totalTime"/>
+		<item key="aty.userActivity_completedDate" value="completedDate"/>
+		<item key="common.entity_updateDate" value="updaterDate"/>
+	</static>
+	
+	<static name="elearningStautsItems" >
+		<item key="common.filter_all" value=""/>
+		<item key="aty.elearning_stauts_P" value="P"/>
+<!-- 		<item key="aty.elearning_stauts_C" value="C"/> -->
+		<item key="aty.elearning_stauts_R" value="R"/>
+	</static>
+	
+	<static name="subObjectType_Folder">
+		<item key="aty.atyfolder_type_O_OS" value="O_OS"/>
+		<item key="aty.atyfolder_type_O_OO" value="O_OO"/>
+		<item key="aty.atyfolder_type_O_OU" value="O_OU"/>
+		<item key="aty.atyfolder_type_O_UP" value="O_UP"/>
+		<item key="aty.atyfolder_type_O_OG" value="O_OG"/>
+		<item key="aty.atyfolder_type_O_OR" value="O_OR"/>
+		<item key="aty.atyfolder_type_R_FF" value="R_FF"/>
+		<item key="aty.atyfolder_type_R_CM" value="R_CM"/>
+		<item key="aty.atyfolder_type_R_CO" value="R_CO"/>
+		<item key="aty.atyfolder_type_R_CS" value="R_CS"/>
+		<item key="aty.atyfolder_type_R_CN" value="R_CN"/>
+		<item key="aty.atyfolder_type_R_CF" value="R_CF"/>
+		<item key="aty.atyfolder_type_R_CT" value="R_CT"/>
+		<item key="aty.atyfolder_type_R_CI" value="R_CI"/>
+		<item key="aty.atyfolder_type_R_SM" value="R_SM"/>
+		<item key="aty.atyfolder_type_R_SY" value="R_SY"/>
+		<item key="aty.atyfolder_type_R_SS" value="R_SS"/>
+		<item key="aty.atyfolder_type_R_SC" value="R_SC"/>
+		<item key="aty.atyfolder_type_R_QM" value="R_QM"/>
+		<item key="aty.atyfolder_type_R_QU" value="R_QU"/>
+		<item key="aty.atyfolder_type_R_QF" value="R_QF"/>
+		<item key="aty.atyfolder_type_R_QB" value="R_QB"/>
+		<item key="aty.atyfolder_type_R_QR" value="R_QR"/>
+		<item key="aty.atyfolder_type_R_QD" value="R_QD"/>
+		<item key="aty.atyfolder_type_R_QP" value="R_QP"/>
+		<item key="aty.atyfolder_type_R_QT" value="R_QT"/>
+		<item key="aty.atyfolder_type_R_QJ" value="R_QJ"/>
+		<item key="aty.atyfolder_type_R_PM" value="R_PM"/>
+		<item key="aty.atyfolder_type_R_PP" value="R_PP"/>
+		<item key="aty.atyfolder_type_R_PF" value="R_PF"/>
+		<item key="aty.atyfolder_type_R_AM" value="R_AM"/>
+		<item key="aty.atyfolder_type_R_AS" value="R_AS"/>
+		<item key="aty.atyfolder_type_R_AF" value="R_AF"/>
+		<item key="aty.atyfolder_type_R_EM" value="R_EM"/>
+		<item key="aty.atyfolder_type_R_EE" value="R_EE"/>
+		<item key="aty.atyfolder_type_R_EF" value="R_EF"/>
+		<item key="aty.atyfolder_type_R_TM" value="R_TM"/>
+		<item key="aty.atyfolder_type_R_TT" value="R_TT"/>
+		<item key="aty.atyfolder_type_R_TF" value="R_TF"/>
+		<item key="aty.atyfolder_type_R_ZM" value="R_ZM"/>
+		<item key="aty.atyfolder_type_R_ZZ" value="R_ZZ"/>
+		<item key="aty.atyfolder_type_R_ZT" value="R_ZT"/>
+		<item key="aty.atyfolder_type_R_ZS" value="R_ZS"/>
+		<item key="aty.atyfolder_type_R_BM" value="R_BM"/>
+		<item key="aty.atyfolder_type_R_BB" value="R_BB"/>
+		<item key="aty.atyfolder_type_R_BF" value="R_BF"/>
+		<item key="aty.atyfolder_type_R_LM" value="R_LM"/>
+		<item key="aty.atyfolder_type_R_LL" value="R_LL"/>
+		<item key="aty.atyfolder_type_R_LF" value="R_LF"/>
+		<item key="aty.atyfolder_type_A_FF" value="A_FF"/>
+		<item key="aty.atyfolder_type_A_EM" value="A_EM"/>
+		<item key="aty.atyfolder_type_A_EL" value="A_EL"/>
+		<item key="aty.atyfolder_type_A_EF" value="A_EF"/>
+		<item key="aty.atyfolder_type_A_XM" value="A_XM"/>
+		<item key="aty.atyfolder_type_A_XN" value="A_XN"/>
+		<item key="aty.atyfolder_type_A_XF" value="A_XF"/>
+		<item key="aty.atyfolder_type_A_PM" value="A_PM"/>
+		<item key="aty.atyfolder_type_A_PF" value="A_PF"/>
+		<item key="aty.atyfolder_type_A_PT" value="A_PT"/>
+		<item key="aty.atyfolder_type_C_CM" value="C_CM"/>
+		<item key="aty.atyfolder_type_C_CF" value="C_CF"/>
+		<item key="aty.atyfolder_type_C_CC" value="C_CC"/>
+		<item key="aty.atyfolder_type_A_IM" value="A_IM"/>
+		<item key="aty.atyfolder_type_A_IL" value="A_IL"/>
+		<item key="aty.atyfolder_type_A_IF" value="A_IF"/>
+	</static>
+	
+	<static name="activityType">
+		<item key="common.select_option_empty" value=""/>
+		<item key="aty.trainingPlanActivity_activityType_s" value="S"/>
+		<item key="aty.trainingPlanActivity_activityType_e" value="E"/>
+		<item key="aty.trainingPlanActivity_activityType_l" value="L"/>
+	</static>
+	
+	<static name="activityCourseInfoType">
+		<item key="aty.activityCourseInfoType_A_EL" value="A_EL"/>
+		
+	</static>
+	
+	<static name="subObjectType_Module">
+		<item key="common.select_option_empty" value=""/>
+		<!-- <item key="aty.atyfolder_type_A_PM" value="A_PM" /> -->
+		<item key="aty.atyfolder_type_A_EM" value="A_EM" />
+		<item key="aty.atyfolder_type_A_XM" value="A_XM" />
+		<!-- <item key="aty.atyfolder_type_A_IM" value="A_IM" /> -->
+	</static>
+	
+	<static name="subObjectType_A_FF">
+		<item key="common.select_option_empty" value="A_FF"/>
+		<!-- <item key="aty.activity_Folder_type_train_plan" value="A_PF" /> -->
+		<item key="aty.activity_Folder_type_online_learn" value="A_EF" />
+		<item key="aty.activity_Folder_type_online_exam" value="A_XF" />
+	</static>
+	
+	<static name="subObjectType_A_EM">
+		<item key="aty.activity_Folder_type_online_learn" value="A_EF" />
+	</static>
+	
+	<static name="subObjectType_A_EF">
+		<item key="aty.activity_Folder_type_online_learn" value="A_EF" />
+	</static>
+	
+	<static name="subObjectType_A_XM">
+		<item key="aty.activity_Folder_type_online_exam" value="A_XF" />
+	</static>
+	
+	<static name="subObjectType_A_XF">
+		<item key="aty.activity_Folder_type_online_exam" value="A_XF" />
+	</static>
+	
+	<static name="subObjectType_A_IM">
+		<item key="aty.activity_Folder_type_colligate_learn" value="A_IF" />
+	</static>
+	
+	<static name="subObjectType_A_IF">
+		<item key="aty.activity_Folder_type_colligate_learn" value="A_IF" />
+	</static>
+	
+	<static name="subObjectType_A_PM">
+		<item key="aty.activity_Folder_type_train_plan" value="A_PF" />
+	</static>
+	
+	<static name="subObjectType_A_PF">
+		<item key="aty.activity_Folder_type_train_plan" value="A_PF" />
+	</static>
+	
+	<static name="enrollMode">
+		<item key="aty.enrollLearner_enrollMode_S" value="S"/>
+		<item key="aty.enrollLearner_enrollMode_F" value="F"/>
+		<item key="aty.enrollLearner_enrollMode_C" value="C"/>
+	</static>
+	
+	<static name="enrollLearnerStauts">
+		<item key="aty.enrollLearner_stauts_R" value="R"/>
+		<item key="aty.enrollLearner_stauts_O" value="O"/>
+		<item key="aty.enrollLearner_stauts_N" value="N"/>
+	</static>
+	
+	<static name="enrollLearnerExcluded">
+		<item key="common.select_option_yes" value="Y"/>
+		<item key="common.select_option_no" value="N"/>
+	</static>
+	
+	<static name="faceTeachingFilterItems" >
+		<item key="common.filter_all" value=""/>
+		<item key="aty.faceTeaching_name" value="name"/>
+		<item key="aty.faceTeaching_type" value="type"/>
+		<item key="aty.faceTeaching_object" value="object"/>
+		<item key="aty.faceTeaching_responser" value="responser"/>
+		<item key="aty.faceTeaching_status" value="status"/>
+	</static>
+	
+	<static name="faceTeachingStatus" >
+		<item key="aty.faceTeaching_release" value="R"/>
+		<item key="aty.faceTeaching_pending" value="P"/>
+		<item key="aty.faceTeaching_checking" value="C"/>
+	</static>
+
+	<static name="faceTeachingItemFilterItems" >
+		<item key="common.filter_all" value=""/>
+		<item key="aty.faceTeachingItem_name" value="name"/>
+		<item key="aty.faceTeachingItem_title" value="title"/>
+		<item key="aty.faceTeachingItem_trainer" value="trainer"/>
+		<item key="aty.faceTeachingItem_type" value="type"/>
+	</static>
+	
+	<static name="faceTeachingItemCostFilterItems" >
+		<item key="common.filter_all" value=""/>
+		<item key="aty.faceTeachingItemCost_name" value="name"/>
+		<item key="aty.faceTeachingItemCost_type" value="type"/>
+		<item key="aty.faceTeachingItemCost_amount" value="amount"/>
+		<item key="aty.faceTeachingItemCost_price" value="price"/>
+	</static>
+	
+	<!-- 考试 查询条件 -->
+	<static name="examinationFilterItems">
+		<item key="common.filter_all" value=""/>
+		<item key="aty.examination_name" value="name"/>
+		<item key="aty.examination_atyTime" value="atyTime"/>
+		<item key="common.entity_updateDate" value="updateDate" />
+	</static>
+	
+	<static name="periodTypeItems" >
+		<item key="aty.period_timeType_N" value="N"/>
+		<item key="aty.period_timeType_D" value="D"/>
+		<item key="aty.period_timeType_W" value="W"/>
+		<item key="aty.period_timeType_S" value="S"/>
+	</static>
+	
+	<static name="periodFlageTypeItems" >
+		<item key="aty.period_FlageType_E" value="E"/>
+		<item key="aty.period_FlageType_S" value="S"/>
+	</static>
+	
+	<static name="workFlowApprovalApprovalTypes" >
+		<item key="common.filter_all" value=""/>
+		<item key="aty.workFlowApproval_approvalType_true" value="0"/>
+		<item key="aty.workFlowApproval_approvalType_false" value="1"/>
+	</static>
+	
+	<static name="enrollLearnerFilterItems" >
+		<item key="common.filter_all" value=""/>
+		<item key="aty.enrollLearner_userId" value="fullName"/>
+		<item key="org.user_loginName" value="loginName"/>
+<!-- 		<item key="org.userGroup_siteId" value="siteName"/> -->
+		<item key="org.organization_name" value="orgName"/>
+		<item key="common.entity_updateDate" value="updateDate"/>
+	</static>
+	
+	<static name="examDetailsFilterItems" >
+		<item key="common.filter_all" value=""/>
+		<item key="aty.enrollLearner_userId" value="fullName"/>
+		<item key="org.user_loginName" value="loginName"/>
+		<item key="exm.totalScore_A_M" value="paperTotalScore"/>
+		<item key="exm.getScore_A_M" value="totalScoreStr"/>
+		<item key="exm.examineeQuestion_examNumber" value="examTime"/>
+	</static>
+	
+	<static name="enrollLearnerFilterFilterItems" >
+		<item key="common.filter_all" value=""/>
+		<item key="org.userGroupFilter_groupName" value="groupName"/>
+		<item key="org.userGroupFilter_filterValue" value="filterValue"/>
+		<item key="common.entity_updateDate" value="updateDate"/>
+	</static>
+	
+	<static name="examineesHistoryStatuItems" >
+		<item key="common.filter_all" value=""/>
+		<item key="aty.examineesHistory_status_N" value="N"/>
+		<item key="aty.examineesHistory_status_S" value="S"/>
+		<item key="aty.examineesHistory_status_E" value="E"/>
+		<item key="aty.examineesHistory_status_A" value="A"/>
+		<item key="aty.examineesHistory_status_R" value="R"/>
+		<item key="aty.examineesHistory_status_D" value="D"/>
+		<item key="aty.examineesHistory_status_P" value="P"/>
+	</static>
+	
+	<static name="allowLogoutRadio" >
+		<item key="aty.allowLogout_yes" value="Y"/>
+		<item key="aty.allowLogout_no" value="N"/>
+	</static>
+	
+	<static name="enrollStatus" >
+	    <item key="common.filter_all" value=""/>
+     	<item key="aty.enrollLearner_stauts_N" value="N"/>
+		<item key="aty.enrollLearner_stauts_R" value="R"/>
+		<item key="aty.enrollLearner_stauts_O" value="O"/>
+	</static>
+	
+	<static name="examTypes" >
+	    <item key="common.filter_all" value=""/>
+     	<item key="rpt.exam_type_online" value="1"/>
+     	<item key="rpt.exam_type_offline" value="0"/>
+	</static>
+	
+	<static name="examStatus" >
+	    <item key="common.filter_all" value=""/>
+     	<item key="rpt.exam_stauts_upexam" value="0"/>
+     	<item key="rpt.exam_stauts_examing" value="1"/>
+     	<item key="rpt.exam_stauts_pass" value="2"/>
+     	<item key="rpt.exam_stauts_unpass" value="-1"/>
+	</static>
+	
+	<static name="questionTypes" >
+	    <item key="common.filter_all" value=""/>
+     	<item key="exm.question_type_T" value="T"/>
+     	<item key="exm.question_type_A" value="A"/>
+	</static>
+	
+	<dynamic name="trainingPlanType" sqlId="aty.traingingPlanType"/>
+	<dynamic name="trainingPlanItemType" sqlId="aty.traingingPlanItemType"/>
+	<dynamic name="trainingPlanItemCostType" sqlId="aty.traingingPlanItemCostType"/>
+	<dynamic name="siteName" sqlId="aty.siteName"/>
+	<dynamic name="parentName" sqlId="aty.parentName"/>
+	<dynamic name="trainingPlanProcessType" sqlId="aty.trainingPlanProcessType"/>
+	<dynamic name="trainingPlanItemName" sqlId="aty.trainingPlanItemName"/>
+	<dynamic name="trainingPlanName" sqlId="aty.trainingPlanName"/>
+	<dynamic name="processName" sqlId="aty.processName"/>
+	<dynamic name="activityId" sqlId="aty.activityId"/>
+	<dynamic name="pmName" sqlId="aty.pmName"/>
+	<dynamic name="userName" sqlId="aty.userName"/>
+	<dynamic name="folderName" sqlId="aty.folderName"/>
+	<dynamic name="testGroupNames" sqlId="aty.testGroupNames"/>
+	<dynamic name="queryByMarkers" sqlId="aty.queryByMarkers"/>
+	<dynamic name="queryByAuditors" sqlId="aty.queryByAuditors"/>
+</dictConfig>

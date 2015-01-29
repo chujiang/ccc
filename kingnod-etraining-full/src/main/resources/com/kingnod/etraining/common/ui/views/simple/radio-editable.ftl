@@ -1,0 +1,1 @@
+<label>${parameters.value}</label><input type="hidden" value="${parameters.value}"/>
